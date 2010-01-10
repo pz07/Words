@@ -34382,3 +34382,159 @@ Rendering lessons/show
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
 Completed in 218ms (View: 174, DB: 27) | 200 OK [http://127.0.0.1/lessons/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#show (for 127.0.0.1 at 2010-01-10 17:55:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLesson Load (1.8ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 1) [0m
+Rendering template within layouts/lessons
+Rendering lessons/show
+  [4;36;1mLearningSchema Load (1.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 2) [0m
+  [4;35;1mQuestion Load (2.7ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 1) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1) [0m
+  [4;35;1mAnswer Load (1.8ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mLevel Load (2.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 3) [0m
+  [4;35;1mAnswer Load (1.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 3) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 4) [0m
+  [4;35;1mAnswer Load (1.6ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 4) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 2) [0m
+  [4;35;1mAnswer Load (1.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 2) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+Completed in 122ms (View: 81, DB: 23) | 200 OK [http://127.0.0.1/lessons/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#show (for 127.0.0.1 at 2010-01-10 17:55:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLesson Load (1.9ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 1) [0m
+Rendering template within layouts/lessons
+Rendering lessons/show
+  [4;36;1mLearningSchema Load (1.6ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 2) [0m
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 1) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1) [0m
+  [4;35;1mAnswer Load (1.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mLevel Load (2.9ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 3) [0m
+  [4;35;1mAnswer Load (1.6ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 3) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 4) [0m
+  [4;35;1mAnswer Load (1.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 4) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 2) [0m
+  [4;35;1mAnswer Load (1.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 2) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 10) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 2) [0m
+Completed in 123ms (View: 80, DB: 26) | 200 OK [http://127.0.0.1/lessons/1]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#index (for 127.0.0.1 at 2010-01-10 17:55:44) [GET]
+  [4;35;1mLesson Load (2.6ms)[0m   [0mSELECT * FROM "lesson" [0m
+Rendering template within layouts/lessons
+Rendering lessons/index
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 2) [0m
+Completed in 69ms (View: 49, DB: 10) | 200 OK [http://127.0.0.1/lessons]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#edit (for 127.0.0.1 at 2010-01-10 17:55:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLesson Load (2.0ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 2) [0m
+Rendering template within layouts/lessons
+Rendering lessons/edit
+  [4;36;1mLearningSchema Load (1.6ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Completed in 68ms (View: 45, DB: 8) | 200 OK [http://127.0.0.1/lessons/2/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#update (for 127.0.0.1 at 2010-01-10 17:55:58) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"tCwzr9nh+Je4FqnkDLCOHkYmYHM49I9HSTXh4cJrOas=", "lesson"=>{"name"=>"Test 02", "learning_schema_id"=>"2", "description"=>"Test lesson number 0233"}, "id"=>"2"}
+  [4;36;1mLesson Load (1.8ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.0ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 2) [0m
+  [4;35;1mLesson Load (1.0ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test 02' AND "lesson".id <> 2) LIMIT 1[0m
+  [4;36;1mLesson Update (0.8ms)[0m   [0;1mUPDATE "lesson" SET "updated_at" = '2010-01-10 16:55:58.472443', "description" = E'Test lesson number 0233' WHERE "id" = 2[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/lessons/2
+Completed in 69ms (DB: 14) | 302 Found [http://127.0.0.1/lessons/2]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#show (for 127.0.0.1 at 2010-01-10 17:55:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLesson Load (1.8ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 2) [0m
+Rendering template within layouts/lessons
+Rendering lessons/show
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 2) [0m
+  [4;35;1mQuestion Load (1.8ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 2) [0m
+Completed in 63ms (View: 36, DB: 10) | 200 OK [http://127.0.0.1/lessons/2]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#index (for 127.0.0.1 at 2010-01-10 17:56:02) [GET]
+  [4;35;1mLesson Load (2.6ms)[0m   [0mSELECT * FROM "lesson" [0m
+Rendering template within layouts/lessons
+Rendering lessons/index
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 2) [0m
+Completed in 140ms (View: 122, DB: 9) | 200 OK [http://127.0.0.1/lessons]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#new (for 127.0.0.1 at 2010-01-10 17:56:06) [GET]
+Rendering template within layouts/lessons
+Rendering lessons/new
+  [4;35;1mLearningSchema Load (1.6ms)[0m   [0mSELECT * FROM "learning_schema" [0m
+Completed in 66ms (View: 45, DB: 6) | 200 OK [http://127.0.0.1/lessons/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#index (for 127.0.0.1 at 2010-01-10 17:56:09) [GET]
+  [4;35;1mLesson Load (2.7ms)[0m   [0mSELECT * FROM "lesson" [0m
+Rendering template within layouts/lessons
+Rendering lessons/index
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 2) [0m
+Completed in 134ms (View: 49, DB: 10) | 200 OK [http://127.0.0.1/lessons]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+
+
+Processing LessonsController#edit (for 127.0.0.1 at 2010-01-10 17:56:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLesson Load (2.1ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 2) [0m
+Rendering template within layouts/lessons
+Rendering lessons/edit
+  [4;36;1mLearningSchema Load (1.6ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Completed in 64ms (View: 40, DB: 8) | 200 OK [http://127.0.0.1/lessons/2/edit]

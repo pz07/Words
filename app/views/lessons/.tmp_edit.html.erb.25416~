@@ -12,10 +12,6 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :learning_schema %><br />
-    <%= f.collection_select(:learning_schema_id, LearningSchema.find(:all), :id, :name, {:prompt => ""})%>
-  </p>
-  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
