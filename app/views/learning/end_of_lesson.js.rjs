@@ -1,0 +1,7 @@
+page.replace_html("question", :partial => "end_of_lesson")
+
+if @mark_correct
+  @mark_correct.each do |c|
+    page["question_#{c}"].setStyle("background-color: green;")
+  end
+end

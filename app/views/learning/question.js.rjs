@@ -1,0 +1,15 @@
+page.replace_html("question", :partial => "question", :object => @question)
+
+page.visual_effect :pulsate, "question_#{@question.id}"
+                                              
+if @mark_correct
+  @mark_correct.each do |c|
+    page["question_#{c}"].setStyle("background-color: green;")
+  end
+end
+
+if @mark_repeat
+  @mark_repeat.each do |c|
+    page["question_#{c}"].setStyle("background-color: blue;")
+  end
+end

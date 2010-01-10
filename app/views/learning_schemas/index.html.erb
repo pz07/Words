@@ -1,0 +1,22 @@
+<h1>Listing learning_schemas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @learning_schemas.each do |learning_schema| %>
+  <tr>
+    <td><%=h learning_schema.name %></td>
+    <td><%=h learning_schema.description %></td>
+    <td><%= link_to 'Show', learning_schema %></td>
+    <td><%= link_to 'Edit', edit_learning_schema_path(learning_schema) %></td>
+    <td><%= link_to 'Destroy', learning_schema, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New learning_schema', new_learning_schema_path %>

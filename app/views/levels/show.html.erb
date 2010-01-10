@@ -1,0 +1,18 @@
+<p>
+  <b>Learning schema:</b>
+  <%=h @level.learning_schema_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%=h @level.level %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%=h @level.color %>
+</p>
+
+
+<%= link_to 'Edit', edit_level_path(@level) %> |
+<%= link_to 'Back', levels_path %>

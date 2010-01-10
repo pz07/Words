@@ -1,0 +1,18 @@
+<p>
+  <b>Question:</b>
+  <%=h @answer.question_id %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%=h @answer.text %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @answer.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_answer_path(@answer) %> |
+<%= link_to 'Back', answers_path %>

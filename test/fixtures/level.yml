@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  learning_schema_id: 1
+  level: 1
+  color: MyString
+
+two:
+  learning_schema_id: 1
+  level: 1
+  color: MyString

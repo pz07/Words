@@ -1,0 +1,17 @@
+<b>Correct</b>
+<br>
+<br>
+<table align="center">
+	<tr>
+		<td>
+			<% form_remote_tag :url => {:action => 'correct', :question_id => correct.id} do %>
+				<%= submit_tag "Next" %>
+			<% end -%>				
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'wrong', :question_id => correct.id} do %>
+				<%= submit_tag "I know" %>
+			<% end %>							
+		</td>
+	</tr>
+</table>
