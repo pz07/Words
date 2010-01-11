@@ -5,3 +5,5 @@ if @mark_correct
     page["question_#{c}"].setStyle("background-color: green;")
   end
 end
+
+page << "clearShorts()"

@@ -9,7 +9,6 @@
 		var key = event.which || event.keyCode;
 		
 		//alert('mam przycisk: '+key);
-		
 		var buttonId = shorts[key]
 		if(buttonId){
 			var button = document.getElementById(buttonId);
@@ -46,7 +45,7 @@
 			<%= link_to 'Lesson details', :controller => 'lessons', :action => "show", :id => @attempt.lesson %>
 			
 		</td>
-		<td style="border: 1px solid red; width: 100%; height: 500px; vertical-align: top;">
+		<td style="border: 1px solid red; width: 100%; height: 300px; vertical-align: top;">
 			<table style="width: 100%; height: 100%;">
 				<tr>
 					<td>

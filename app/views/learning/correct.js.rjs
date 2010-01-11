@@ -1,1 +1,7 @@
 page.replace_html("question", :partial => "correct", :object => @question)
+
+page["msgDiv"].visual_effect :fade
+
+page << "clearShorts()"
+page << "addShort(13, 'nextButton')"
+page << "addShort(119, 'wrongButton')"

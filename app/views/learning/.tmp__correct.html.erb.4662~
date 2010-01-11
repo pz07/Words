@@ -1,5 +1,4 @@
-<div id="msgDiv" style="color: green; font-size: 16pt;">Correct</div>
-<div id="qDiv" style="color: green; font-size: 21pt; padding-top: 20px;"><%= correct.text%></div>
+<b>Correct</b>
 <br>
 <br>
 <table align="center">

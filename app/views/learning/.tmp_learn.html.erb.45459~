@@ -1,35 +1,3 @@
-<script>
-
-	document.observe('keypress', handleKeyPress);
-	
-	var shorts = [];
-	shorts[13] = 'startButton'
-	
-	function handleKeyPress(event){
-		var key = event.which || event.keyCode;
-		
-		//alert('mam przycisk: '+key);
-		
-		var buttonId = shorts[key]
-		if(buttonId){
-			var button = document.getElementById(buttonId);
-			if (button && button.click) {
-				button.click();
-				return;
-			}
-		}
-	}
-	
-	function clearShorts(){
-		shorts = [];
-	}
-	
-	function addShort(key, buttonId){
-		shorts[key] = buttonId;
-	}
-	
-</script>
-
 <table style="width: 100%;">
 	<tr>
 		<td style="width: 30%; vertical-align: top;">
@@ -46,7 +14,7 @@
 			<%= link_to 'Lesson details', :controller => 'lessons', :action => "show", :id => @attempt.lesson %>
 			
 		</td>
-		<td style="border: 1px solid red; width: 100%; height: 500px; vertical-align: top;">
+		<td style="border: 1px solid red; width: 100%; height: 300px; vertical-align: top;">
 			<table style="width: 100%; height: 100%;">
 				<tr>
 					<td>
@@ -63,7 +31,7 @@
 					<td>
 						<div id="question" style="width: 100%; text-align: center;">
 							<% form_remote_tag :url => {:action => 'question'} do %>
-		    					<%= submit_tag "Start [Enter]", :id => "startButton" %>
+		    					<%= submit_tag "Start" %>
 						    <% end %>				
 						</div>						
 					</td>

@@ -1,0 +1,24 @@
+<h1>Editing lesson</h1>
+
+<% form_for(@lesson) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :learning_schema %><br />
+    <%= f.collection_select(:learning_schema_id, LearningSchema.find(:all), :id, :name, {:prompt => ""})%>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @lesson %> |
+<%= link_to 'Back', lessons_path %>

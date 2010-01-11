@@ -35,7 +35,7 @@
 			    <td><%=h question.text %></td>
 			    <td><%=h question.first_answer.text if question.answers.size > 0 %></td>
 			    <td style="background-color: <%=h question.level.color -%>; color: grey;">
-			    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
+			    	<%=h question.level.level-%>/<%=h @lesson.learning_schema.levels.size -%>
 				</td>
 				<td><%= link_to 'Show', question %></td>
 			    <td><%= link_to 'Edit', edit_question_path(question) %></td>

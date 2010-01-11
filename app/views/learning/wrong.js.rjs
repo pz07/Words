@@ -1,1 +1,7 @@
 page.replace_html("question", :partial => "wrong", :object => @question)
+
+page << "clearShorts()"
+page << "addShort(13, 'nextButton')"
+page << "addShort(99, 'correctButton')"
+page << "addShort(97, 'showAnswerButton')"
+

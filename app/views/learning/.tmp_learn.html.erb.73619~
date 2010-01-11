@@ -2,20 +2,21 @@
 
 	document.observe('keypress', handleKeyPress);
 	
-	var shorts = [];
-	shorts[13] = 'startButton'
+	var shorts = [[13, 'startButton']];
 	
 	function handleKeyPress(event){
 		var key = event.which || event.keyCode;
 		
 		//alert('mam przycisk: '+key);
 		
-		var buttonId = shorts[key]
-		if(buttonId){
-			var button = document.getElementById(buttonId);
-			if (button && button.click) {
-				button.click();
-				return;
+		for(var i = 0; i < shorts.length; i++){
+			var s = shorts[i];
+			if(key == s[0]){
+				var button = document.getElementById(s[1]);
+				if (button && button.click) {
+					button.click();
+					return;
+				}
 			}
 		}
 	}
@@ -24,8 +25,8 @@
 		shorts = [];
 	}
 	
-	function addShort(key, buttonId){
-		shorts[key] = buttonId;
+	function addShort(key, formName){
+		shorts.push([key, formName]);
 	}
 	
 </script>
@@ -46,7 +47,7 @@
 			<%= link_to 'Lesson details', :controller => 'lessons', :action => "show", :id => @attempt.lesson %>
 			
 		</td>
-		<td style="border: 1px solid red; width: 100%; height: 500px; vertical-align: top;">
+		<td style="border: 1px solid red; width: 100%; height: 300px; vertical-align: top;">
 			<table style="width: 100%; height: 100%;">
 				<tr>
 					<td>

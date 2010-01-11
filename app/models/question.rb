@@ -28,7 +28,13 @@ class Question < ActiveRecord::Base
   end
   
   def next_level
-    self.level = self.level.next_level
+    n = self.level.next_level
+    if n == nil
+      self.active = false
+    else
+      self.level = n 
+    end
+    
     self.last_level_update = Time.now
   end
   
