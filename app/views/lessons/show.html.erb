@@ -27,7 +27,12 @@
 <% @lesson.questions.each do |question| %>
   <tr>
     <td><%=h question.text %></td>
-    <td><%=h question.first_answer.text if question.answers.size > 0 %></td>
+    <td>
+    	<%=h question.first_answer.text if question.answers.size > 0 %>
+		<% if question.answers.size > 1%>
+			(and <%= (question.answers.size) -1%> more)
+		<%end%>
+	</td>
     <td style="background-color: <%=h question.level.color -%>; color: grey;">
     	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
 	</td>
