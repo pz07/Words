@@ -1,0 +1,18 @@
+<%= error_messages_for :question, :answer%>
+<%= hidden_field_tag :lesson_id, @question.lesson.id %>
+
+<p>
+<%= form.label :text %><br />
+<%= form.text_area :text, :cols => 50, :rows => 5 %>
+</p>
+
+<% fields_for :answer do |answer| %>
+	<p>
+		<%= answer.label :text %><br />
+		<%= answer.text_area :text, :cols => 50, :rows => 5%>
+	</p>
+<% end %>
+
+<p>
+<%= form.submit 'Update' %>
+</p>

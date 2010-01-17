@@ -1,0 +1,31 @@
+<div class="title">Listing lessons</div>
+<br>
+
+<div class="links">
+	<%= link_to 'New lesson', new_lesson_path %>
+</div>
+<br>
+
+<table class="dblist">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Questions</th>
+	<th></th>
+  </tr>
+<% if @lessons.empty? %>
+  <tr>
+  	<td colspan=4>No lessons.</td>
+  </tr>
+<%end%>
+<% @lessons.each do |lesson| %>
+  <tr>
+    <td><%=h lesson.name %></td>
+    <td><%=h truncate lesson.description, :length => 80 %></td>
+    <td class="right"><%=h lesson.questions.size %></td>
+    <td><%= link_to 'Show', lesson %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

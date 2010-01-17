@@ -1,36 +1,10 @@
 class AnswersController < ApplicationController
   
-  # GET /answer
-  # GET /answer.xml
-  def index
-    @answers = Answer.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @answers }
-    end
-  end
-
-  # GET /answer/1
-  # GET /answer/1.xml
-  def show
-    @answer = Answer.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @answer }
-    end
-  end
-
   # GET /answer/new
   # GET /answer/new.xml
   def new
     @answer = Answer.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @answer }
-    end
+    @answer.question = Question.find(params[:question_id])
   end
 
   # GET /answer/1/edit
@@ -42,16 +16,15 @@ class AnswersController < ApplicationController
   # POST /answer.xml
   def create
     @answer = Answer.new(params[:answer])
+    @answer.question = Question.find(params[:question_id])
+    
+    @answer.priority = @answer.question.answers[(@answer.question.answers.size) -1].priority + 1
 
-    respond_to do |format|
-      if @answer.save
-        flash[:notice] = 'Answer was successfully created.'
-        format.html { redirect_to(@answer) }
-        format.xml  { render :xml => @answer, :status => :created, :location => @answer }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
-      end
+    if @answer.save
+      flash[:notice] = 'Answer was successfully created.'
+      redirect_to question_path(@answer.question)
+    else
+      render :action => "new"
     end
   end
 
@@ -60,27 +33,22 @@ class AnswersController < ApplicationController
   def update
     @answer = Answer.find(params[:id])
 
-    respond_to do |format|
-      if @answer.update_attributes(params[:answer])
-        flash[:notice] = 'Answer was successfully updated.'
-        format.html { redirect_to(@answer) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @answer.errors, :status => :unprocessable_entity }
-      end
+    if @answer.update_attributes(params[:answer])
+      flash[:notice] = 'Answer was successfully updated.'
+      redirect_to question_path(@answer.question)
+    else
+      render :action => "edit"
     end
   end
 
   # DELETE /answer/1
   # DELETE /answer/1.xml
   def destroy
-    @answer = Answer.find(params[:id])
-    @answer.destroy
+    answer = Answer.find(params[:id])
+    question = answer.question
+    
+    answer.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(answer_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to question_path(question)
   end
 end

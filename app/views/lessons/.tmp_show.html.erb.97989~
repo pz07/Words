@@ -1,0 +1,37 @@
+<div class="title">Lesson details</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Learn', :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+	<%= link_to 'Delete', @lesson, :confirm => 'Are you sure?', :method => :delete %> |
+	<%= link_to 'Add question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>|
+	<%= link_to 'Back', lessons_path %>
+</div>
+<br>
+
+<%= render :partial => "lesson", :object => @lesson%>
+
+<br/><br/>
+
+<table class="dblist">
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+  </tr>
+<% if @lesson.questions.empty?%>
+	<tr>
+		<td colspan=2>No questions yet.</td>
+	</tr>
+<%end%>
+<% @lesson.questions.each do |question| %>
+  <tr>
+    <td><%=h question.text %></td>
+    <td><%=h question.first_answer.text if question.answers.size > 0 %></td>
+    <td style="background-color: <%=h question.level.color -%>; color: grey;">
+    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
+	</td>
+	<td><%= link_to 'Show', question %></td>
+  </tr>
+<% end %>
+</table>

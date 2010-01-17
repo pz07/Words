@@ -3,3 +3,20 @@
 
 en:
   hello: "Hello world"
+  
+  activerecord:
+    errors:
+      template:
+        body: ""
+        header:
+          one:   ""
+          other: ""
+    models:
+      question: "Question"
+      answer: "Answer"
+    attributes:
+      question:
+        text: "Question"
+      answer:
+        text: "Answer"
+

@@ -1,0 +1,24 @@
+<table class="form">
+	<tr>
+		<td colspan=2>
+			  <%= form.error_messages %>
+		</td>
+	</tr>
+	<tr>
+		<th><%= form.label :name %></th>
+		<td><%= form.text_field :name %></td>
+	</tr>
+	<tr>
+		<th><%= form.label :description %></th>
+		<td><%= form.text_area :description, :cols => 50, :rows => 5 %></td>
+	</tr>
+	<tr>
+		<th><%= form.label :learning_schema %></th>
+		<td><%= form.collection_select(:learning_schema_id, LearningSchema.find(:all), :id, :name, {:prompt => ""})%></td>
+	</tr>
+	<tr>
+		<th colspan=2 style="text-align: center;">
+			<%= form.submit 'Save' %>
+		</th>
+	</tr>
+</table>

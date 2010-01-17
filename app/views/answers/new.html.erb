@@ -1,23 +1,33 @@
-<h1>New answer</h1>
+<div class="title">New answer</div>
+<br>
 
-<% form_for(@answer) do |f| %>
-  <%= f.error_messages %>
+<div class="links">
+	<%= link_to 'Back', :controller => "questions", :action => "show", :id => @answer.question %>
+</div>
+<br>
 
-  <p>
-    <%= f.label :question_id %><br />
-    <%= f.text_field :question_id %>
-  </p>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </p>
-  <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% form_for(@answer, :action => 'create') do |f| %>
+  	<%= hidden_field_tag :question_id, @answer.question.id %>
+
+<table class="form">
+	<tr>
+		<td colspan=2>
+			<%= error_messages_for :answer%>			
+		</td>
+	</tr>
+	<tr>
+		<th>Question:</th>
+		<td><%= @answer.question.text %></td>
+	</tr>
+	<tr>
+		<th>Answer:</th>
+		<td><%= f.text_field :text, :size => 50 %></td>
+	</tr>
+	<tr>
+		<th colspan=2 style="text-align: center;">
+			<%= f.submit 'Save' %>			
+		</th>
+	</tr>
+</table>
+
 <% end %>
-
-<%= link_to 'Back', answers_path %>

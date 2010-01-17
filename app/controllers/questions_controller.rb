@@ -4,11 +4,6 @@ class QuestionsController < ApplicationController
   # GET /question/1.xml
   def show
     @question = Question.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @question }
-    end
   end
 
   # GET /question/new
@@ -18,18 +13,11 @@ class QuestionsController < ApplicationController
     @question.lesson = Lesson.find(params[:lesson_id])
     
     @answer = Answer.new
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @question }
-    end
   end
 
   # GET /question/1/edit
   def edit
     @question = Question.find(params[:id])
-    #TODO do zmiany
-    @answer = @question.first_answer
   end
 
   # POST /question
@@ -42,22 +30,24 @@ class QuestionsController < ApplicationController
     @question.last_level_update = Time.now
     
     @answer = Answer.new(params[:answer])
-
-    if @question.valid?
-      @answer.question = @question
-      if @answer.valid?
+    @answer.priority = 1
+    @answer.question = @question
+    
+    if @answer.valid?
+      @question.answers << @answer
+      if @question.valid?
         Question.transaction do
           @question.save
           @answer.save
           
           flash[:notice] = 'Question was successfully added.'
-          redirect_to :controller => 'lessons', :action => "show", :id => @question.lesson    
+          redirect_to lesson_path(@question.lesson)    
         end
       else
         render :action => 'new'
       end
     else
-      @answer.valid?
+      @question.valid?
       render :action => 'new'
     end
   end
@@ -66,12 +56,10 @@ class QuestionsController < ApplicationController
   # PUT /question/1.xml
   def update
     @question = Question.find(params[:id])
-    @answer = @question.first_answer
 
-    #todo sprawdzić czy działa walidacja
-    if @question.update_attributes(params[:question]) and @answer.update_attributes(params[:answer])
+    if @question.update_attributes(params[:question])
       flash[:notice] = 'Question was successfully updated.'
-      redirect_to :controller => 'lessons', :action => "show", :id => @question.lesson    
+      redirect_to question_path(@question)    
     else
       render :action => "edit"
     end
@@ -80,12 +68,12 @@ class QuestionsController < ApplicationController
   # DELETE /question/1
   # DELETE /question/1.xml
   def destroy
-    @question = Question.find(params[:id])
-    lesson = @question.lesson
+    question = Question.find(params[:id])
+    lesson = question.lesson
     
-    @question.destroy
+    question.destroy
 
-    flash[:notice] = 'Word was successfully deleted'
+    flash[:notice] = 'Question was successfully deleted'
     redirect_to :controller => 'lessons', :action => 'show', :id => lesson
   end
 end

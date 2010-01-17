@@ -1,45 +1,41 @@
 require 'test_helper'
 
 class AnswersControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:answer)
-  end
 
   test "should get new" do
-    get :new
+    get :new, :question_id => question(:home)
     assert_response :success
+    
+    assert_select "form input#answer_text[type=text]"
   end
 
   test "should create answer" do
     assert_difference('Answer.count') do
-      post :create, :answer => { }
+      post :create, :answer => {:text => "test answer"}, :question_id => question(:home).id
     end
 
-    assert_redirected_to answer_path(assigns(:answer))
-  end
-
-  test "should show answer" do
-    get :show, :id => answer(:one).to_param
-    assert_response :success
+    assert_redirected_to question_path(question(:home))
   end
 
   test "should get edit" do
-    get :edit, :id => answer(:one).to_param
+    get :edit, :id => answer(:home0).to_param
     assert_response :success
+
+    assert_select "form input#answer_text[type=text][value=dom]"
   end
 
   test "should update answer" do
-    put :update, :id => answer(:one).to_param, :answer => { }
-    assert_redirected_to answer_path(assigns(:answer))
+    put :update, :id => answer(:home0).to_param, :answer => {:text => "changed answer"}
+    assert_redirected_to question_path(question(:home))
+    
+    assert_equal "changed answer", Answer.find(answer(:home0)).text
   end
 
   test "should destroy answer" do
     assert_difference('Answer.count', -1) do
-      delete :destroy, :id => answer(:one).to_param
+      delete :destroy, :id => answer(:home0).to_param
     end
 
-    assert_redirected_to answer_path
+    assert_redirected_to question_path(question(:home))
   end
 end

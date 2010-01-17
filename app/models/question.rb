@@ -4,13 +4,11 @@ class Question < ActiveRecord::Base
   belongs_to :lesson
   belongs_to :level
   
-  has_many :answers, :dependent => :destroy
+  has_many :answers, :dependent => :destroy, :order => "priority ASC"
   has_one :first_answer,
           :class_name => 'Answer' ,
           :order  => 'priority ASC'
           
-
-  
   #walidacja
   validates_presence_of :text, :lesson, :level, :last_level_update, :active
   validate :must_have_at_least_one_answer
@@ -37,7 +35,7 @@ class Question < ActiveRecord::Base
   
   protected
     def must_have_at_least_one_answer
-      errors.add(:answers, 'Question must have at least one answer' ) if answers.nil? || answers.size == 0
+      errors.add(:answer, "can't be blank" ) if (answers.nil? || answers.size == 0)
     end
 
   

@@ -1,12 +1,49 @@
-<p>
-  <b>Lesson:</b>
-  <%=h @question.lesson_id %>
-</p>
+<div class="title">Question details</div>
+<br>
 
-<p>
-  <b>Text:</b>
-  <%=h @question.text %>
-</p>
+<div class="links">
+	<%= link_to 'Edit', edit_question_path(@question) %> |
+	<%= link_to 'Delete', @question, :confirm => 'Are you sure?', :method => :delete %> |
+	<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
+	<%= link_to 'Back', lesson_path(@question.lesson) %>
+</div>
+<br>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', lesson_path, :id => @question.lesson %>
+<table class="dbdetails">
+	<tr>
+		<th>Lesson:</th>
+		<td><%= @question.lesson.name%></td>
+	</tr>
+	<tr>
+		<th>Question:</th>
+		<td><%= @question.text%></td>
+	</tr>
+	<tr>
+		<th>Level:</th>
+		<td>
+			<span style="background-color: <%=@question.level.color%>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<%= @question.level.level%>/<%= @question.lesson.learning_schema.last_level.level%>
+		</td>
+	</tr>
+	<tr>
+		<th>Active:</th>
+		<td><%= @question.active%></td>
+	</tr>
+</table>
+
+<br/><br/>
+
+<table class="dblist">
+	<tr>
+		<th>&nbsp;</th>
+		<th>Answer</th>
+	</tr>
+	<% @question.answers.each do |answer| %>
+		<tr>
+			<td><%= answer.priority%></td>
+			<td><%= answer.text%></td>
+			<td><%=link_to 'Edit', edit_answer_path(answer) %></td>
+			<td><%= link_to 'Delete', answer, :confirm => 'Are you sure?', :method => :delete %></td>
+		</tr>
+	<%end%>	
+</table>
