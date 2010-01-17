@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  description: MyText
+lesson01:
+  name: Test lesson 01
+  description: Description of test lesson 01
+  learning_schema: default
 
-two:
-  name: MyString
-  description: MyText
+lesson02:
+  name: Test lesson 02
+  description: Description of test lesso02
+  learning_schema: default

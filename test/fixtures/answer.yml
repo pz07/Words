@@ -1,11 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  question_id: 1
-  text: MyText
+home0:
+  question: home
+  text: dom
   priority: 1
 
-two:
-  question_id: 1
-  text: MyText
+home1:
+  question: home
+  text: mieszkanie
+  priority: 2
+
+tree0:
+  question: tree
+  text: drzewo
   priority: 1

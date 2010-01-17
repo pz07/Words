@@ -1,5 +1,5 @@
 class LearningController < ApplicationController
-  
+
   def index
     redirect_to :action => 'learn'
   end
@@ -22,10 +22,10 @@ class LearningController < ApplicationController
       @mark_repeat = [params[:mark_repeat]]
     end
     
-    if @attempt.questionsToLearn.size > 0
-      @question = Question.find(@attempt.questionsToLearn[0])
-    elsif @attempt.questionsToRepeat.size > 0 
-      @question = Question.find(@attempt.questionsToRepeat[0])
+    if @attempt.questions_to_learn.size > 0
+      @question = Question.find(@attempt.questions_to_learn[0])
+    elsif @attempt.questions_to_repeat.size > 0 
+      @question = Question.find(@attempt.questions_to_repeat[0])
     else
       respond_to do |format|
         format.js {render :action => 'end_of_lesson'}

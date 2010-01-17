@@ -52,3 +52,73 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+table.dblist{
+}
+
+table.dblist tr{
+	
+}
+
+table.dblist tr th{
+	background: #0070CA;
+	color: white;
+	border: 1px solid black;
+	padding: 2px 10px 2px 10px;
+}
+
+table.dblist tr td{
+	background-color: white;
+	border: 1px solid gray;
+}
+
+table.dblist tr td.right{
+	background-color: white;
+	border: 1px solid gray;
+	text-align: right;
+}
+
+table.dbdetails{
+}
+
+table.dbdetails tr{
+	
+}
+
+table.dbdetails tr th{
+	background: #0070CA;
+	color: white;
+	border: 1px solid black;
+	text-align: left;
+}
+
+table.dbdetails tr td{
+	background-color: white;
+	border: 1px solid gray;
+}
+
+table.dbdetails tr td.right{
+	background-color: white;
+	border: 1px solid gray;
+	text-align: right;
+}
+
+div.title{
+	background: #0E0047;
+	color: white;
+	border: 1px solid black;
+	padding: 10px 10px 10px 10px;
+	
+	font-family: monospace;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+div.title_small{
+	background: #0E0047;
+	color: white;
+	border: 1px solid black;
+	padding: 3px 3px 3px 3px;
+	
+	font-family: monospace;
+	font-size: 12pt;
+}

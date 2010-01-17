@@ -1,52 +1,37 @@
-<table style="width: 100%;">
+<div class="title">Lesson details</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Learn', :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+	<%= link_to 'Delete', @lesson, :confirm => 'Are you sure?', :method => :delete %> |
+	<%= link_to 'Add question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>|
+	<%= link_to 'Back', lessons_path %>
+</div>
+<br>
+
+<%= render :partial => "lesson", :object => @lesson%>
+
+<br/><br/>
+
+<table class="dblist">
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+  </tr>
+<% if @lesson.questions.empty?%>
 	<tr>
-		<td style="width: 30%; vertical-align: top;">
-			<p>
-			  <b>Name:</b>
-			  <%=h @lesson.name %>
-			</p>
-			
-			<p>
-			  <b>Description:</b>
-			  <%=h @lesson.description %>
-			</p>
-
-			<p>
-			  <b>Learning schema:</b>
-			  <%=h @lesson.learning_schema.name %>
-			</p>
-			
-			<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-			<%= link_to 'Learn', :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
-			<%= link_to 'Back', lessons_path %>			
-		</td>
-		<td>
-			<h1>Listing questions</h1>
-
-			<table>
-			  <tr>
-			    <th>Question</th>
-			    <th>Answer</th>
-				<th></th>
-			  </tr>
-			
-			<% @lesson.questions.each do |question| %>
-			  <tr>
-			    <td><%=h question.text %></td>
-			    <td><%=h question.first_answer.text if question.answers.size > 0 %></td>
-			    <td style="background-color: <%=h question.level.color -%>; color: grey;">
-			    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
-				</td>
-				<td><%= link_to 'Show', question %></td>
-			    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-			    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
-			  </tr>
-			<% end %>
-			</table>
-			
-			<br />
-			
-			<%= link_to 'New question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>
-		</td>
+		<td colspan=2>No questions yet.</td>
 	</tr>
+<%end%>
+<% @lesson.questions.each do |question| %>
+  <tr>
+    <td><%=h question.text %></td>
+    <td><%=h question.first_answer.text if question.answers.size > 0 %></td>
+    <td style="background-color: <%=h question.level.color -%>; color: grey;">
+    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
+	</td>
+	<td><%= link_to 'Show', question %></td>
+  </tr>
+<% end %>
 </table>

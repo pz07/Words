@@ -37,10 +37,11 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: Words_test
+  host: localhost
+  database: words_test
   pool: 5
-  username: Words
-  password:
+  username: postgres
+  password: postgres
 
 production:
   adapter: postgresql

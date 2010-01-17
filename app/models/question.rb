@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   belongs_to :lesson
   belongs_to :level
   
-  has_many :answers
+  has_many :answers, :dependent => :destroy
   has_one :first_answer,
           :class_name => 'Answer' ,
           :order  => 'priority ASC'
@@ -12,10 +12,8 @@ class Question < ActiveRecord::Base
 
   
   #walidacja
-  validates_presence_of :text
-  validates_presence_of :lesson
-  validates_presence_of :level
-  validates_presence_of :last_level_update
+  validates_presence_of :text, :lesson, :level, :last_level_update, :active
+  validate :must_have_at_least_one_answer
   
   def correct? answer
     answers.each do |a|
@@ -33,9 +31,14 @@ class Question < ActiveRecord::Base
       self.active = false
     else
       self.level = n 
+      self.last_level_update = Time.now
     end
-    
-    self.last_level_update = Time.now
   end
+  
+  protected
+    def must_have_at_least_one_answer
+      errors.add(:answers, 'Question must have at least one answer' ) if answers.nil? || answers.size == 0
+    end
+
   
 end

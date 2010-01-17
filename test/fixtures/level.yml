@@ -1,11 +1,79 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  learning_schema_id: 1
-  level: 1
-  color: MyString
+default0:
+  level: 0
+  color: #000001
+  day_interval: 0
+  learning_schema: default
 
-two:
-  learning_schema_id: 1
+default1:
   level: 1
-  color: MyString
+  color: #000002
+  day_interval: 1
+  learning_schema: default
+
+default2:
+  level: 2
+  color: #000003
+  day_interval: 3
+  learning_schema: default
+
+default3:
+  level: 3
+  color: #000004
+  day_interval: 7
+  learning_schema: default
+
+default4:
+  level: 4
+  color: #000005
+  day_interval: 12
+  learning_schema: default
+
+default5:
+  level: 5
+  color: #000006
+  day_interval: 21
+  learning_schema: default
+
+default6:
+  level: 6
+  color: #000007
+  day_interval: 50
+  learning_schema: default
+
+default7:
+  level: 7
+  color: #000008
+  day_interval: 100
+  learning_schema: default
+
+short0:
+  level: 0
+  color: #000001
+  day_interval: 0
+  learning_schema: short
+
+short1:
+  level: 1
+  color: #000002
+  day_interval: 1
+  learning_schema: short
+
+short2:
+  level: 2
+  color: #000003
+  day_interval: 3
+  learning_schema: short
+
+short3:
+  level: 3
+  color: #000004
+  day_interval: 7
+  learning_schema: short
+
+short4:
+  level: 4
+  color: #000005
+  day_interval: 14
+  learning_schema: short
