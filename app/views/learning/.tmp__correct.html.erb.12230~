@@ -1,0 +1,18 @@
+<div id="msgDiv" style="color: green; font-size: 16pt;">Correct</div>
+<div id="qDiv" style="color: green; font-size: 21pt; padding-top: 20px;"><%= correct.first_anwer.text%></div>
+<br>
+<br>
+<table align="center">
+	<tr>
+		<td>
+			<% form_remote_tag :url => {:action => 'correct', :question_id => correct.id} do %>
+				<%= submit_tag "Next [Enter]", :id => 'nextButton' %>
+			<% end -%>				
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'wrong', :question_id => correct.id} do %>
+				<%= submit_tag "I don't know [w]", :id => 'wrongButton' %>
+			<% end %>							
+		</td>
+	</tr>
+</table>

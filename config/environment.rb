@@ -72,5 +72,9 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  
+  config.gem 'mislav-will_paginate' , :version => '~> 2.3.2' ,
+      :lib => 'will_paginate' , :source => 'http://gems.github.com'
 end
+
 ActiveRecord::Base.pluralize_table_names = false

@@ -15,37 +15,35 @@ class LearningController < ApplicationController
   def question
     @attempt = session[:attempt]
     
-    if params[:mark_correct]
-      @mark_correct = [params[:mark_correct]]
-    end
-    if params[:mark_repeat]
-      @mark_repeat = [params[:mark_repeat]]
-    end
+    changes = @attempt.get_changes
+    @mark_correct = changes[:mark_correct]
+    @mark_repeat = changes[:mark_repeat]
     
-    if @attempt.questions_to_learn.size > 0
-      @question = Question.find(@attempt.questions_to_learn[0])
-    elsif @attempt.questions_to_repeat.size > 0 
-      @question = Question.find(@attempt.questions_to_repeat[0])
-    else
+    qId = @attempt.current;
+    if !qId
       respond_to do |format|
         format.js {render :action => 'end_of_lesson'}
       end      
       return
     end
-    
+  
+    @question = Question.find(qId)
     respond_to do |format|
       format.js {render :action => 'question'}
     end
   end
   
   def check
-    @question = Question.find(params[:question_id])
+    @attempt = session[:attempt]
+    @question = Question.find(@attempt.current)
     
-    if @question.correct?(params[:answer])
+    correct = @question.correct(params[:answer]) 
+    if correct == 100
       respond_to do |format|
         format.js {render :action => 'correct'}
       end
     else
+      @levenshteinPercent = correct
       respond_to do |format|
         format.js {render :action => 'wrong'}
       end
@@ -54,29 +52,29 @@ class LearningController < ApplicationController
   
   def correct
     @attempt = session[:attempt]
-    passed = @attempt.correct(params[:question_id])
+    passed = @attempt.correct
 
     if passed
       q = Question.find(passed)
       q.next_level
       
       q.save!
-      
-      redirect_to(:action => "question", :mark_correct => passed)
-    else
-      redirect_to(:action => "question")
     end
+
+    redirect_to(:action => "question")
   end
 
   def wrong
     @attempt = session[:attempt]
-    to_repeat = @attempt.wrong(params[:question_id])
+    @attempt.wrong
     
-    if to_repeat
-      redirect_to(:action => "question", :mark_repeat => to_repeat)
-    else
-      redirect_to(:action => "question")
-    end
+    redirect_to(:action => "question")
   end
   
+  def skip
+    @attempt = session[:attempt]
+    @attempt.skip
+    
+    redirect_to(:action => "question")
+  end
 end

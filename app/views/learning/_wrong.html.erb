@@ -1,16 +1,21 @@
-<div id="msgDiv" style="color: red; font-size: 12pt;">Wrong</div>
+<div id="msgDiv" style="color: red; font-size: 12pt;">Wrong: <%=@levenshteinPercent%>%</div>
 <div id="qDiv" style="color: red; font-size: 26pt; padding-top: 20px; visibility: hidden;"><%= wrong.first_answer.text%></div>
 <br>
 <br>
 <table align="center">
 	<tr>
 		<td>
-			<% form_remote_tag :url => {:action => 'wrong', :question_id => wrong.id} do %>
-				<%= submit_tag "Next [Enter]", :id => "nextButton" %>
+			<% form_remote_tag :url => {:action => 'wrong'} do %>
+				<%= submit_tag "Again [Enter]", :id => "againButton" %>
 			<% end -%>				
 		</td>
 		<td>
-			<% form_remote_tag :url => {:action => 'correct', :question_id => wrong.id} do %>
+			<% form_remote_tag :url => {:action => 'skip'} do %>
+				<%= submit_tag "Skip [s]", :id => "skipButton" %>
+			<% end -%>				
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'correct'} do %>
 				<%= submit_tag "I know [c]", :id => "correctButton" %>
 			<% end %>							
 		</td>

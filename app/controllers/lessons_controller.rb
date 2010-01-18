@@ -14,7 +14,9 @@ class LessonsController < ApplicationController
   # GET /lesson/1.xml
   def show
     @lesson = Lesson.find(params[:id])
-
+    @questions = Question.paginate :page => params[:page], :per_page => 10, 
+                      :order => 'level_id DESC, created_at DESC'
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @lesson }

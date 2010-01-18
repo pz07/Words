@@ -32,7 +32,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert q.errors.invalid?(:last_level_update)
     assert q.errors.invalid?(:level)
     assert q.errors.invalid?(:lesson)
-    assert q.errors.invalid?(:answers)
+    assert q.errors.invalid?(:answer)
     
     assert @q.valid?
   end
@@ -50,10 +50,20 @@ class QuestionTest < ActiveSupport::TestCase
     assert_equal "a02", @q.first_answer.text
   end
   
-  test "test correct" do
+  test "test correct?" do
      assert @q.correct?("a01")
      assert @q.correct?("a02")
      assert !@q.correct?("a03")
+ end
+ 
+ test "test correct" do
+     assert_equal 100, @q.correct("a01")
+     assert_equal 100, @q.correct("a02")
+     assert_equal 67, @q.correct("a03")
+     assert_equal 0, @q.correct("")
+     assert_equal 34, @q.correct("a")
+     assert_equal 67, @q.correct("002")
+     assert_equal 50, @q.correct("a01000")
  end
  
  test "test next_level" do

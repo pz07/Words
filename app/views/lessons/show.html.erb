@@ -19,12 +19,12 @@
     <th>Question</th>
     <th>Answer</th>
   </tr>
-<% if @lesson.questions.empty?%>
+<% if @questions.empty?%>
 	<tr>
 		<td colspan=2>No questions yet.</td>
 	</tr>
 <%end%>
-<% @lesson.questions.each do |question| %>
+<% @questions.each do |question| %>
   <tr>
     <td><%=h question.text %></td>
     <td>
@@ -39,4 +39,11 @@
 	<td><%= link_to 'Show', question %></td>
   </tr>
 <% end %>
+<% if !@questions.empty?%>
+  <tr>
+  	<td colspan=4 style="text-align: center; border: 0px;">
+		<%= will_paginate @questions %>
+	</td>
+  </tr>
+<%end%>
 </table>
