@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
-                      :order => 'level_id DESC, created_at DESC'
+                      :conditions => {:lesson_id => @lesson}, :order => 'level_id DESC, created_at DESC'
     
     respond_to do |format|
       format.html # show.html.erb
