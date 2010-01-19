@@ -36,7 +36,7 @@ class Question < ActiveRecord::Base
     end
     
     answer_size = answer.length if answer.length > answer_size
-      
+    
     if result == 0
       return 100
     elsif result >= answer_size
@@ -63,12 +63,23 @@ class Question < ActiveRecord::Base
 
   private
     def levenshtein(a, b)
-      case
-        when a.empty? then b.length
-        when b.empty? then a.length
-        else [(a[0] == b[0] ? 0 : 1) + levenshtein(a[1..-1], b[1..-1]),
-              1 + levenshtein(a[1..-1], b),
-              1 + levenshtein(a, b[1..-1])].min
+      distance = [];
+ 
+      0.upto(a.length) do |i|
+        distance << [i]  
       end
+      0.upto(b.length) do |i|
+        distance[0] << i  
+      end
+    
+      1.upto(a.length) do |i|
+        1.upto(b.length) do |j|
+          distance[i][j] = [distance[i-1][j] + 1,
+                            distance[i][j-1] + 1,
+                            distance[i-1][j-1] + (a[i-1] == b[j-1] ? 0 : 1)].min
+        end 
+      end
+      
+      distance[a.length][b.length]
     end
 end

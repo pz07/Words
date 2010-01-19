@@ -64,6 +64,8 @@ class QuestionTest < ActiveSupport::TestCase
      assert_equal 34, @q.correct("a")
      assert_equal 67, @q.correct("002")
      assert_equal 50, @q.correct("a01000")
+     assert_equal 50, @q.correct("a02000")
+     assert_equal 34, @q.correct("a03000")
  end
  
  test "test next_level" do
