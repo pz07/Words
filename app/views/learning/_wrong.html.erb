@@ -1,11 +1,11 @@
 <div id="msgDiv" style="color: red; font-size: 12pt;">Wrong: <%=@levenshteinPercent%>%</div>
 <div id="qDiv" style="padding-top: 20px; visibility: hidden;">
-	<span style="color: red; font-size: 16pt;">
+	<div style="color: red; font-size: 16pt;">
 		<%= params[:answer]%>
-	</span>
-	<span style="color: green; font-size: 16pt;">
+	</div>
+	<div style="color: green; font-size: 16pt;">
 		<%= wrong.first_answer.text%><br/><br/>
-	</span>
+	</div>
 </div>
 <br>
 <br>
