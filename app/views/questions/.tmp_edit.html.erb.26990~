@@ -1,7 +1,0 @@
-<h1>Editing question</h1>
-
-<% form_for(@question) do |f| %>
-	<%= render(:partial => "form" , :object => f) %>
-<% end %>
-
-<%= link_to 'Back', @question %> |
