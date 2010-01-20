@@ -1,18 +1,17 @@
 class UpdateQuestionTable01 < ActiveRecord::Migration
   def self.up
-    add_column :question, :next_attempt_date, :datetime, :null => false, :default => Time.now
-    rename_column :question, :last_level_update, :last_attempt_date
-    
-    Question.reset_column_information
-    
-    Question.find(:all).each do |q|
-      q.next_attempt_date = q.compute_next_attempt_date
-      q.save!
+    Level.find(:all, :conditions => "learning_schema_id is null").each do |l|
+      l.destroy!
+    end
+    Question.find(:all, :conditions => "lesson_id is null").each do |q|
+      q.destroy!
+    end
+    Answer.find(:all, :conditions => "question_id is null").each do |a|
+      a.destroy!
     end
   end
 
   def self.down
-    remove_column :question, :next_attempt_date
-    rename_column :question, :last_attempt_date, :last_level_update
+    #nic nie robie
   end
 end
