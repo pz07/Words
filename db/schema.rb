@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100111200543) do
+ActiveRecord::Schema.define(:version => 20100120170525) do
 
   create_table "answer", :force => true do |t|
     t.integer  "question_id",                :null => false
@@ -44,13 +44,14 @@ ActiveRecord::Schema.define(:version => 20100111200543) do
   end
 
   create_table "question", :force => true do |t|
-    t.integer  "lesson_id",                           :null => false
+    t.integer  "lesson_id",                                            :null => false
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "level_id"
-    t.datetime "last_level_update"
-    t.boolean  "active",            :default => true, :null => false
+    t.datetime "last_attempt_date"
+    t.boolean  "active",            :default => true,                  :null => false
+    t.datetime "next_attempt_date", :default => '2010-01-20 18:32:52', :null => false
   end
 
   create_table "session", :force => true do |t|

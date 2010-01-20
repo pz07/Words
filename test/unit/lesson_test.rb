@@ -51,7 +51,7 @@ class LessonTest < ActiveSupport::TestCase
     assert_equal 0, to_learn.size
     
     #minęło 21 godz.
-    q01.last_level_update = q01.last_level_update.advance(:hours => -21)
+    q01.next_attempt_date = q01.next_attempt_date.advance(:hours => -21)
     q01.save!
     
     l.reload
@@ -60,7 +60,7 @@ class LessonTest < ActiveSupport::TestCase
     assert_equal 0, to_learn.size
     
     #minęły dodatkowe 2 godz.
-    q01.last_level_update = q01.last_level_update.advance(:hours => -2)
+    q01.next_attempt_date = q01.next_attempt_date.advance(:hours => -2)
     q01.save!
     
     l.reload

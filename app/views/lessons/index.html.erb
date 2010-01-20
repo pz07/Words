@@ -11,11 +11,12 @@
     <th>Name</th>
     <th>Description</th>
     <th>Questions</th>
+    <th>To learn</th>
 	<th></th>
   </tr>
 <% if @lessons.empty? %>
   <tr>
-  	<td colspan=4>No lessons.</td>
+  	<td colspan=5>No lessons.</td>
   </tr>
 <%end%>
 <% @lessons.each do |lesson| %>
@@ -23,6 +24,7 @@
     <td><%=h lesson.name %></td>
     <td><%=h truncate lesson.description, :length => 80 %></td>
     <td class="right"><%=h lesson.questions.size %></td>
+    <td class="right"><%=h lesson.questions_to_learn.size %></td>
     <td><%= link_to 'Show', lesson %></td>
   </tr>
 <% end %>

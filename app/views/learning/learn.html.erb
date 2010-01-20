@@ -28,6 +28,14 @@
 		shorts[key] = buttonId;
 	}
 	
+	function showWaitDiv(){
+		Element.show('waitDiv');
+	}
+	
+	function hideWaitDiv(){
+		Element.hide('waitDiv');
+	}
+	
 </script>
 
 <%= render :partial => "lessons/lesson", :object => @attempt.lesson%>
@@ -51,6 +59,11 @@
 					<%end%>		
 				</tr>
 			</table>
+		</td>
+	</tr>
+	<tr>
+		<td id="waitDiv" style="display: none;">
+			Please wait...
 		</td>
 	</tr>
 	<tr style="height: 100%; vertical-align: center;">

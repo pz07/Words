@@ -7,7 +7,7 @@ class QuestionTest < ActiveSupport::TestCase
     @q.lesson = lesson(:lesson01)
     @q.level = @q.lesson.learning_schema.start_level
     @q.text = "q01"
-    @q.last_level_update = Time.now
+    @q.last_attempt_date = Time.now
     
     @a01 = Answer.new
     @a01.text = "a01"
@@ -29,7 +29,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert !q.valid?
     assert q.active
     assert q.errors.invalid?(:text)
-    assert q.errors.invalid?(:last_level_update)
+    assert q.errors.invalid?(:last_attempt_date)
     assert q.errors.invalid?(:level)
     assert q.errors.invalid?(:lesson)
     assert q.errors.invalid?(:answer)
@@ -69,56 +69,56 @@ class QuestionTest < ActiveSupport::TestCase
  end
  
  test "test next_level" do
-   t = @q.last_level_update
+   t = @q.last_attempt_date
   
    assert_equal 0, @q.level.level
    assert @q.active
   
    @q.next_level
    assert_equal 1, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 2, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 3, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 4, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 5, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 6, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 7, @q.level.level
-   assert @q.last_level_update > t
+   assert @q.last_attempt_date > t
    assert @q.active
-   t = @q.last_level_update
+   t = @q.last_attempt_date
    
    @q.next_level
    assert_equal 7, @q.level.level
-   assert @q.last_level_update == t
+   assert @q.last_attempt_date == t
    assert !@q.active
  end
 

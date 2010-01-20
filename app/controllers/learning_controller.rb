@@ -37,13 +37,13 @@ class LearningController < ApplicationController
     @attempt = session[:attempt]
     @question = Question.find(@attempt.current)
     
-    correct = @question.correct(params[:answer]) 
-    if correct == 100
+    @answer = params[:answer]
+    @levenshteinPercent = @question.correct(@answer) 
+    if @levenshteinPercent == 100
       respond_to do |format|
         format.js {render :action => 'correct'}
       end
     else
-      @levenshteinPercent = correct
       respond_to do |format|
         format.js {render :action => 'wrong'}
       end
@@ -77,4 +77,10 @@ class LearningController < ApplicationController
     
     redirect_to(:action => "question")
   end
+  
+  def onlyRepetitions
+   session[:attempt].onlyRepetitions
+   redirect_to(:action => "correct")
+  end
+
 end

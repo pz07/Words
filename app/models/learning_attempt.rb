@@ -11,7 +11,7 @@ class LearningAttempt
   def initialize(lesson)
     @lesson = lesson
     
-    to_randomize = @lesson.questions_to_learn.dup
+    to_randomize = @lesson.questions_to_learn_ids.dup
     randomized = []
     
     randomized << to_randomize.slice!(rand(to_randomize.size)) until to_randomize.size.eql?(0)
@@ -31,32 +31,38 @@ class LearningAttempt
   end
   
   def correct
-    deleted = self.questions_to_learn.delete self.current
-    unless deleted
-      deleted = self.questions_to_repeat.delete self.current
+    deleted = nil
+    
+    i = self.questions_to_learn.index self.current
+    if i
+      deleted = self.questions_to_learn.delete_at i
+    elsif !@repeated
+      i = self.questions_to_repeat.index self.current
+      if i
+        deleted = self.questions_to_repeat.delete_at i
+      end
     end
-     
-    self.questions_passed << self.current
-      
+
     if @repeated
-       @just_repeated << self.current
+      @just_repeated << self.current
     else
        @just_passed << self.current
+       self.questions_passed << self.current
     end
-      
+     
     @repeated = nil
     
     self.next_question
-    deleted
+    
+    return deleted
   end
  
   def wrong
-    if self.questions_to_learn.include? self.current
-      @repeated = self.current
+    if self.questions_to_repeat.last != self.current
       self.questions_to_repeat << self.current
-    elsif self.questions_to_repeat.include? self.current
-      @repeated = nil
     end
+  
+    @repeated = self.current
  end
 
  def skip
@@ -73,6 +79,11 @@ class LearningAttempt
 
     @repeated = nil
     self.next_question
+ end
+ 
+ def onlyRepetitions
+   @just_passed = self.questions_to_learn
+   @questions_to_learn = []
  end
 
  def get_changes

@@ -18527,3 +18527,2062 @@ Completed in 16ms (DB: 12) | 302 Found [http://test.host/answers/1920588793?answ
   [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
   [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
   [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (4.8ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (0.0ms)[0m   [0mRuntimeError: BŁĄD	C42703	Mkolumna "next_attempt_date" nie istnieje	P71	Fparse_expr.c	L421	RtransformColumnRef: SELECT * FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (5.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (6.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLevel Load (3.0ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLevel Load (4.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (4.0ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLevel Load (10.9ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mLevel Destroy (0.8ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2083576775[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1649692261[0m
+  [4;36;1mLevel Destroy (1.1ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 357793523[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 207236936[0m
+  [4;36;1mLevel Destroy (1.1ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2069700574[0m
+  [4;35;1mLevel Destroy (1.1ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1698269822[0m
+  [4;36;1mLevel Destroy (0.7ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 306100972[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 188214097[0m
+  [4;36;1mLearningSchema Destroy (0.7ms)[0m   [0;1mDELETE FROM "learning_schema" WHERE "id" = 1667104992[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (2.2ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLearningSchema Load (1.8ms)[0m   [0;1mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'default') LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.8ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.4ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (2.9ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (2.9ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.4ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (3.3ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.8ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.7ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.7ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.0ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRuntimeError: BŁĄD	C42703	Mkolumna "next_attempt_date" nie istnieje	P91	Fparse_expr.c	L421	RtransformColumnRef: SELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (1.1ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'') LIMIT 1[0m
+  [4;36;1mLesson Load (1.4ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 02') LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.1ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (2.9ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.6ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 254316707) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (5.1ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.1ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.2ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (3.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (1.3ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.3ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.1ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mQuestion Load (4.7ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "text", "last_level_update", "active") VALUES(1649692261, '2010-01-20 17:03:29.534822', 666426138, '2010-01-20 17:03:29.534822', E'q01', '2010-01-20 17:03:29.406546', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:03:29.550698', '2010-01-20 17:03:29.550698', E'a01', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:03:29.562042', '2010-01-20 17:03:29.562042', E'a02', 2) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Update (0.8ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:03:29.573568', "priority" = 3 WHERE "id" = 2064220033[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.0ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853393) [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (3.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (3.0ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 5) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 6) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.3ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 7) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (11.3ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (4.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLevel Load (5.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLevel Load (5.5ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mLevel Destroy (1.9ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2083576775[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1649692261[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 357793523[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 207236936[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2069700574[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1698269822[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 306100972[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 188214097[0m
+  [4;36;1mLearningSchema Destroy (0.6ms)[0m   [0;1mDELETE FROM "learning_schema" WHERE "id" = 1667104992[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (2.3ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLearningSchema Load (1.8ms)[0m   [0;1mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'default') LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.0ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.7ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (4.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (3.2ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.6ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (2.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.0ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 926834397) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (2.2ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:37:11.629412', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:37:11.598429', "last_attempt_date" = '2010-01-20 17:37:11.580101' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:37:11.644111', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:37:11.616463', "last_attempt_date" = '2010-01-20 17:37:11.616196' WHERE "id" = 926834397[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (1.1ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'') LIMIT 1[0m
+  [4;36;1mLesson Load (1.2ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 02') LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (1.0ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.9ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 254316707) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (3.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (3.4ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (3.1ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLevel Load (1.2ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (1.6ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.5ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.5ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mQuestion Load (4.6ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (2.2ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.6ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.9ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (3.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:37:11.931272', 666426138, '2010-01-20 17:37:11.931272', '2010-01-20 18:32:52.000000', E'q01', '2010-01-20 17:37:11.921085', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:37:11.943447', '2010-01-20 17:37:11.943447', E'a01', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:37:11.955116', '2010-01-20 17:37:11.955116', E'a02', 2) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Update (0.8ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:37:11.966690', "priority" = 3 WHERE "id" = 2064220033[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853393) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.8ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (3.6ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 5) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (3.1ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 6) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.3ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 7) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (9.1ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.7ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (4.0ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.9ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLevel Load (2.6ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.9ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLevel Load (5.5ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mLevel Destroy (1.4ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2083576775[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1649692261[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 357793523[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 207236936[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2069700574[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1698269822[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 306100972[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 188214097[0m
+  [4;36;1mLearningSchema Destroy (0.6ms)[0m   [0;1mDELETE FROM "learning_schema" WHERE "id" = 1667104992[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (2.9ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLearningSchema Load (1.8ms)[0m   [0;1mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'default') LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.0ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.9ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (3.2ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.3ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mLesson Load (2.3ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (3.1ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (1.4ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.6ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.6ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (2.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.0ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 926834397) [0m
+  [4;36;1mLevel Load (2.6ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.5ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.9ms)[0m   [0;1mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (2.8ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (0.8ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:39:54.762099', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:39:54.730721', "last_attempt_date" = '2010-01-20 17:39:54.715255' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.8ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:39:54.775545', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:39:54.749081', "last_attempt_date" = '2010-01-20 17:39:54.748816' WHERE "id" = 926834397[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.8ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:39:54.792351', "next_attempt_date" = '2010-01-19 20:39:54.715255' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (1.1ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'') LIMIT 1[0m
+  [4;36;1mLesson Load (1.3ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 02') LIMIT 1[0m
+  [4;35;1mLesson Load (1.4ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 254316707) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (4.1ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.3ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLevel Load (1.5ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (1.3ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.3ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.1ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:39:55.072378', 666426138, '2010-01-20 17:39:55.072378', '2010-01-20 18:32:52.000000', E'q01', '2010-01-20 17:39:55.062926', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:39:55.084813', '2010-01-20 17:39:55.084813', E'a01', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:39:55.096102', '2010-01-20 17:39:55.096102', E'a02', 2) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Update (0.8ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:39:55.107659', "priority" = 3 WHERE "id" = 2064220033[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853393) [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 5) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 6) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.4ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 7) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (4.0ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLevel Load (5.6ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mLevel Destroy (0.8ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2083576775[0m
+  [4;35;1mLevel Destroy (0.8ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1649692261[0m
+  [4;36;1mLevel Destroy (0.7ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 357793523[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 207236936[0m
+  [4;36;1mLevel Destroy (0.7ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2069700574[0m
+  [4;35;1mLevel Destroy (0.6ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1698269822[0m
+  [4;36;1mLevel Destroy (0.7ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 306100972[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 188214097[0m
+  [4;36;1mLearningSchema Destroy (0.7ms)[0m   [0;1mDELETE FROM "learning_schema" WHERE "id" = 1667104992[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (2.3ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLearningSchema Load (1.2ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLearningSchema Load (1.9ms)[0m   [0;1mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'default') LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.2ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.0ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.7ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (3.1ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.7ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.7ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.7ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (2.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.1ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 926834397) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (0.9ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:02.755370', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:41:02.724323', "last_attempt_date" = '2010-01-20 17:41:02.708905' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:02.768891', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:41:02.742505', "last_attempt_date" = '2010-01-20 17:41:02.742234' WHERE "id" = 926834397[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:02.785366', "next_attempt_date" = '2010-01-20 18:41:02.724323' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:02.801358', "next_attempt_date" = '2010-01-20 16:41:02.724323' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:02.825943', "level_id" = 207236936, "next_attempt_date" = '2010-01-23 15:41:02.819463', "last_attempt_date" = '2010-01-20 17:41:02.819246' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (1.1ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'') LIMIT 1[0m
+  [4;36;1mLesson Load (1.3ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 02') LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 254316707) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.3ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (1.3ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.3ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.1ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.8ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.8ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.8ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.7ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.6ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.9ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (3.1ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:41:03.099163', 666426138, '2010-01-20 17:41:03.099163', '2010-01-20 18:32:52.000000', E'q01', '2010-01-20 17:41:03.089773', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:41:03.111566', '2010-01-20 17:41:03.111566', E'a01', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:41:03.123151', '2010-01-20 17:41:03.123151', E'a02', 2) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Update (0.7ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:41:03.134742', "priority" = 3 WHERE "id" = 2064220033[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853393) [0m
+  [4;36;1mAnswer Load (2.7ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.8ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.6ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (3.4ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.6ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 5) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 6) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.6ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 7) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.4ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#create (for 0.0.0.0 at 2010-01-20 18:41:55) [POST]
+  Parameters: {"question_id"=>1909853392, "answer"=>{"text"=>"test answer"}}
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mAnswer Load (4.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853392, '2010-01-20 17:41:55.723243', '2010-01-20 17:41:55.723243', E'test answer', 3) RETURNING "id"[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 42ms (DB: 52) | 302 Found [http://test.host/answers?answer%5Btext%5D=test+answer&question_id=1909853392]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#destroy (for 0.0.0.0 at 2010-01-20 18:41:55) [DELETE]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.8ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.4ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Destroy (1.0ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 13ms (DB: 16) | 302 Found [http://test.host/answers/1920588793]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#edit (for 0.0.0.0 at 2010-01-20 18:41:55) [GET]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+Rendering template within layouts/application
+Rendering answers/edit
+  [4;36;1mQuestion Load (6.8ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Completed in 41ms (View: 30, DB: 17) | 200 OK [http://test.host/answers/1920588793/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#new (for 0.0.0.0 at 2010-01-20 18:41:55) [GET]
+  Parameters: {"question_id"=>#<Question id: 1909853392, lesson_id: 666426138, text: "home", created_at: "2010-01-20 17:41:55", updated_at: "2010-01-20 17:41:55", level_id: 1649692261, last_attempt_date: "2010-01-20 18:41:55", active: true, next_attempt_date: "2010-01-20 18:41:55">}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering answers/new
+Completed in 11ms (View: 5, DB: 7) | 200 OK [http://test.host/answers/new?question_id=1909853392]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#update (for 0.0.0.0 at 2010-01-20 18:41:55) [PUT]
+  Parameters: {"id"=>"1920588793", "answer"=>{"text"=>"changed answer"}}
+  [4;36;1mAnswer Load (3.2ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Update (1.2ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:41:56.007496', "text" = E'changed answer' WHERE "id" = 1920588793[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 17ms (DB: 12) | 302 Found [http://test.host/answers/1920588793?answer%5Btext%5D=changed+answer]
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mAnswer Load (2.8ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "learning_schema" [0m
+
+
+Processing LearningSchemasController#create (for 0.0.0.0 at 2010-01-20 18:41:56) [POST]
+  Parameters: {"learning_schema"=>{}}
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLearningSchema Load (1.2ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering learning_schemas/new
+Completed in 24ms (View: 7, DB: 13) | 200 OK [http://test.host/learning_schemas?]
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT count(*) AS count_all FROM "learning_schema" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "learning_schema" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LearningSchemasController#index (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  [4;35;1mLearningSchema Load (2.6ms)[0m   [0mSELECT * FROM "learning_schema" [0m
+Rendering template within layouts/application
+Rendering learning_schemas/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+
+
+Processing LearningSchemasController#new (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+Rendering template within layouts/application
+Rendering learning_schemas/new
+Completed in 4ms (View: 3, DB: 1) | 200 OK [http://test.host/learning_schemas/new]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+
+
+Processing LessonsController#create (for 0.0.0.0 at 2010-01-20 18:41:56) [POST]
+  Parameters: {"lesson"=>{"name"=>"just created", "learning_schema"=>#<LearningSchema id: 1667104992, name: "default", description: "Default learning schema", created_at: "2010-01-20 17:41:55", updated_at: "2010-01-20 17:41:55">}}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (1.6ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'just created') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "lesson" ("name", "created_at", "updated_at", "learning_schema_id", "description") VALUES(E'just created', '2010-01-20 17:41:56.167174', '2010-01-20 17:41:56.167174', 1667104992, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/1051822756
+Completed in 30ms (DB: 15) | 302 Found [http://test.host/lessons?lesson%5Blearning_schema%5D=1667104992&lesson%5Bname%5D=just+created]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#destroy (for 0.0.0.0 at 2010-01-20 18:41:56) [DELETE]
+  Parameters: {"id"=>"666426138"}
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.7ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.8ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;36;1mAnswer Destroy (0.8ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;35;1mQuestion Destroy (0.7ms)[0m   [0mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;35;1mLesson Destroy (0.8ms)[0m   [0mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons
+Completed in 31ms (DB: 23) | 302 Found [http://test.host/lessons/666426138]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#edit (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;35;1mLesson Load (2.7ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering lessons/edit
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (7.6ms)
+Completed in 17ms (View: 10, DB: 10) | 200 OK [http://test.host/lessons/666426138/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LessonsController#index (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  [4;35;1mLesson Load (3.0ms)[0m   [0mSELECT * FROM "lesson" [0m
+Rendering template within layouts/application
+Rendering lessons/index
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1051822755) [0m
+Completed in 16ms (View: 8, DB: 7) | 200 OK [http://test.host/lessons]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+
+
+Processing LessonsController#new (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+Rendering template within layouts/application
+Rendering lessons/new
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (6.1ms)
+Completed in 10ms (View: 7, DB: 4) | 200 OK [http://test.host/lessons/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#show (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (4.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."lesson_id" = 666426138) ORDER BY level_id DESC, created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering lessons/show
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+Rendered lessons/_lesson (5.0ms)
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+Completed in 63ms (View: 30, DB: 32) | 200 OK [http://test.host/lessons/666426138]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#update (for 0.0.0.0 at 2010-01-20 18:41:56) [PUT]
+  Parameters: {"lesson"=>{"name"=>"changed lesson name"}, "id"=>"666426138"}
+  [4;35;1mLesson Load (2.7ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLesson Load (1.2ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'changed lesson name' AND "lesson".id <> 666426138) LIMIT 1[0m
+  [4;35;1mLesson Update (0.8ms)[0m   [0mUPDATE "lesson" SET "updated_at" = '2010-01-20 17:41:56.477645', "name" = E'changed lesson name' WHERE "id" = 666426138[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 18ms (DB: 11) | 302 Found [http://test.host/lessons/666426138?lesson%5Bname%5D=changed+lesson+name]
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "level" [0m
+
+
+Processing LevelsController#create (for 0.0.0.0 at 2010-01-20 18:41:56) [POST]
+  Parameters: {"level"=>{}}
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.2ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering levels/new
+Completed in 32ms (View: 10, DB: 7) | 200 OK [http://test.host/levels?]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "level" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "level" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+
+
+Processing LevelsController#index (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  [4;36;1mLevel Load (7.5ms)[0m   [0;1mSELECT * FROM "level" [0m
+Rendering template within layouts/application
+Rendering levels/index
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LevelsController#new (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+Rendering template within layouts/application
+Rendering levels/new
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://test.host/levels/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2010-01-20 18:41:56) [POST]
+  Parameters: {"lesson_id"=>"666426138", "question"=>{"text"=>"test question"}, "answer"=>{"text"=>"test answer"}}
+  [4;35;1mLesson Load (2.6ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:41:56.737318', 666426138, '2010-01-20 17:41:56.737318', '2010-01-20 17:41:56.721460', E'test question', '2010-01-20 17:41:56.708583', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:41:56.750004', '2010-01-20 17:41:56.750004', E'test answer', 1) RETURNING "id"[0m
+Redirected to http://test.host/lessons/666426138
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Completed in 70ms (DB: 20) | 302 Found [http://test.host/questions?answer%5Btext%5D=test+answer&lesson_id=666426138&question%5Btext%5D=test+question]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#destroy (for 0.0.0.0 at 2010-01-20 18:41:56) [DELETE]
+  Parameters: {"id"=>"1909853392"}
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.8ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;36;1mAnswer Destroy (0.8ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;35;1mQuestion Destroy (0.7ms)[0m   [0mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 21ms (DB: 19) | 302 Found [http://test.host/questions/1909853392]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#edit (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/edit
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Completed in 16ms (View: 8, DB: 14) | 200 OK [http://test.host/questions/1909853392/edit]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#new (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  Parameters: {"lesson_id"=>#<Lesson id: 666426138, name: "Test lesson 01", description: "Description of test lesson 01", created_at: "2010-01-20 17:41:55", updated_at: "2010-01-20 17:41:55", learning_schema_id: 1667104992>}
+  [4;35;1mLesson Load (2.6ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 11ms (View: 6, DB: 6) | 200 OK [http://test.host/questions/new?lesson_id=666426138]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#show (for 0.0.0.0 at 2010-01-20 18:41:56) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+Completed in 36ms (View: 18, DB: 21) | 200 OK [http://test.host/questions/1909853392]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#update (for 0.0.0.0 at 2010-01-20 18:41:56) [PUT]
+  Parameters: {"id"=>1909853392, "question"=>{"text"=>"home222"}}
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (0.8ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:41:56.975236', "text" = E'home222' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 24ms (DB: 16) | 302 Found [http://test.host/questions/1909853392?question%5Btext%5D=home222]
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#create (for 0.0.0.0 at 2010-01-20 18:43:47) [POST]
+  Parameters: {"question_id"=>1909853392, "answer"=>{"text"=>"test answer"}}
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mAnswer Load (3.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853392, '2010-01-20 17:43:47.320345', '2010-01-20 17:43:47.320345', E'test answer', 3) RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 39ms (DB: 51) | 302 Found [http://test.host/answers?answer%5Btext%5D=test+answer&question_id=1909853392]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#destroy (for 0.0.0.0 at 2010-01-20 18:43:47) [DELETE]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.6ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 13ms (DB: 14) | 302 Found [http://test.host/answers/1920588793]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#edit (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+Rendering template within layouts/application
+Rendering answers/edit
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Completed in 18ms (View: 11, DB: 14) | 200 OK [http://test.host/answers/1920588793/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#new (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  Parameters: {"question_id"=>#<Question id: 1909853392, lesson_id: 666426138, text: "home", created_at: "2010-01-20 17:43:47", updated_at: "2010-01-20 17:43:47", level_id: 1649692261, last_attempt_date: "2010-01-20 18:43:47", active: true, next_attempt_date: "2010-01-20 18:43:47">}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering answers/new
+Completed in 11ms (View: 5, DB: 7) | 200 OK [http://test.host/answers/new?question_id=1909853392]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#update (for 0.0.0.0 at 2010-01-20 18:43:47) [PUT]
+  Parameters: {"id"=>"1920588793", "answer"=>{"text"=>"changed answer"}}
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Update (0.8ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:43:47.486943', "text" = E'changed answer' WHERE "id" = 1920588793[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 16ms (DB: 11) | 302 Found [http://test.host/answers/1920588793?answer%5Btext%5D=changed+answer]
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "learning_schema" [0m
+
+
+Processing LearningSchemasController#create (for 0.0.0.0 at 2010-01-20 18:43:47) [POST]
+  Parameters: {"learning_schema"=>{}}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLearningSchema Load (1.2ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendering template within layouts/application
+Rendering learning_schemas/new
+Completed in 23ms (View: 7, DB: 11) | 200 OK [http://test.host/learning_schemas?]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "learning_schema" [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "learning_schema" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LearningSchemasController#index (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  [4;35;1mLearningSchema Load (2.5ms)[0m   [0mSELECT * FROM "learning_schema" [0m
+Rendering template within layouts/application
+Rendering learning_schemas/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+
+
+Processing LearningSchemasController#new (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+Rendering template within layouts/application
+Rendering learning_schemas/new
+Completed in 4ms (View: 4, DB: 1) | 200 OK [http://test.host/learning_schemas/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+
+
+Processing LessonsController#create (for 0.0.0.0 at 2010-01-20 18:43:47) [POST]
+  Parameters: {"lesson"=>{"name"=>"just created", "learning_schema"=>#<LearningSchema id: 1667104992, name: "default", description: "Default learning schema", created_at: "2010-01-20 17:43:47", updated_at: "2010-01-20 17:43:47">}}
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (1.7ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'just created') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "lesson" ("name", "created_at", "updated_at", "learning_schema_id", "description") VALUES(E'just created', '2010-01-20 17:43:47.636141', '2010-01-20 17:43:47.636141', 1667104992, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/1051822756
+Completed in 26ms (DB: 11) | 302 Found [http://test.host/lessons?lesson%5Blearning_schema%5D=1667104992&lesson%5Bname%5D=just+created]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#destroy (for 0.0.0.0 at 2010-01-20 18:43:47) [DELETE]
+  Parameters: {"id"=>"666426138"}
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.8ms)[0m   [0mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;36;1mAnswer Destroy (0.6ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;35;1mQuestion Destroy (0.7ms)[0m   [0mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;35;1mLesson Destroy (0.6ms)[0m   [0mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons
+Completed in 31ms (DB: 23) | 302 Found [http://test.host/lessons/666426138]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#edit (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering lessons/edit
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (7.6ms)
+Completed in 17ms (View: 10, DB: 10) | 200 OK [http://test.host/lessons/666426138/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LessonsController#index (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  [4;35;1mLesson Load (3.1ms)[0m   [0mSELECT * FROM "lesson" [0m
+Rendering template within layouts/application
+Rendering lessons/index
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1051822755) [0m
+Completed in 16ms (View: 8, DB: 7) | 200 OK [http://test.host/lessons]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+
+
+Processing LessonsController#new (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+Rendering template within layouts/application
+Rendering lessons/new
+  [4;36;1mLearningSchema Load (2.7ms)[0m   [0;1mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (6.3ms)
+Completed in 11ms (View: 7, DB: 4) | 200 OK [http://test.host/lessons/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#show (for 0.0.0.0 at 2010-01-20 18:43:47) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;36;1mLesson Load (3.1ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (4.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."lesson_id" = 666426138) ORDER BY level_id DESC, created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering lessons/show
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+Rendered lessons/_lesson (5.0ms)
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mLevel Load (2.9ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mLevel Load (2.6ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+Completed in 63ms (View: 30, DB: 32) | 200 OK [http://test.host/lessons/666426138]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#update (for 0.0.0.0 at 2010-01-20 18:43:47) [PUT]
+  Parameters: {"lesson"=>{"name"=>"changed lesson name"}, "id"=>"666426138"}
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLesson Load (1.3ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'changed lesson name' AND "lesson".id <> 666426138) LIMIT 1[0m
+  [4;35;1mLesson Update (0.9ms)[0m   [0mUPDATE "lesson" SET "updated_at" = '2010-01-20 17:43:47.927216', "name" = E'changed lesson name' WHERE "id" = 666426138[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 18ms (DB: 11) | 302 Found [http://test.host/lessons/666426138?lesson%5Bname%5D=changed+lesson+name]
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" [0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2010-01-20 18:43:47) [POST]
+  Parameters: {"lesson_id"=>"666426138", "question"=>{"text"=>"test question"}, "answer"=>{"text"=>"test answer"}}
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:43:48.094511', 666426138, '2010-01-20 17:43:48.094511', '2010-01-20 17:43:48.010122', E'test question', '2010-01-20 17:43:47.997570', 't') RETURNING "id"[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:43:48.107244', '2010-01-20 17:43:48.107244', E'test answer', 1) RETURNING "id"[0m
+Redirected to http://test.host/lessons/666426138
+  [4;36;1mSQL (0.6ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Completed in 136ms (DB: 27) | 302 Found [http://test.host/questions?answer%5Btext%5D=test+answer&lesson_id=666426138&question%5Btext%5D=test+question]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" [0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#destroy (for 0.0.0.0 at 2010-01-20 18:43:48) [DELETE]
+  Parameters: {"id"=>"1909853392"}
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.8ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.7ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 22ms (DB: 19) | 302 Found [http://test.host/questions/1909853392]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" [0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#edit (for 0.0.0.0 at 2010-01-20 18:43:48) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/edit
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Completed in 16ms (View: 8, DB: 14) | 200 OK [http://test.host/questions/1909853392/edit]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.7ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#new (for 0.0.0.0 at 2010-01-20 18:43:48) [GET]
+  Parameters: {"lesson_id"=>#<Lesson id: 666426138, name: "Test lesson 01", description: "Description of test lesson 01", created_at: "2010-01-20 17:43:47", updated_at: "2010-01-20 17:43:47", learning_schema_id: 1667104992>}
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 11ms (View: 6, DB: 7) | 200 OK [http://test.host/questions/new?lesson_id=666426138]
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#show (for 0.0.0.0 at 2010-01-20 18:43:48) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLevel Load (2.6ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.1ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (3.4ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level DESC LIMIT 1[0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+Completed in 37ms (View: 18, DB: 21) | 200 OK [http://test.host/questions/1909853392]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#update (for 0.0.0.0 at 2010-01-20 18:43:48) [PUT]
+  Parameters: {"id"=>1909853392, "question"=>{"text"=>"home222"}}
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.9ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:43:48.337912', "text" = E'home222' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 24ms (DB: 16) | 302 Found [http://test.host/questions/1909853392?question%5Btext%5D=home222]
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (7.1ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.4ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#create (for 0.0.0.0 at 2010-01-20 18:44:46) [POST]
+  Parameters: {"question_id"=>1909853392, "answer"=>{"text"=>"test answer"}}
+  [4;36;1mQuestion Load (3.4ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mAnswer Load (3.1ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853392, '2010-01-20 17:44:46.151853', '2010-01-20 17:44:46.151853', E'test answer', 3) RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 41ms (DB: 58) | 302 Found [http://test.host/answers?answer%5Btext%5D=test+answer&question_id=1909853392]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#destroy (for 0.0.0.0 at 2010-01-20 18:44:46) [DELETE]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 13ms (DB: 13) | 302 Found [http://test.host/answers/1920588793]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" [0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mAnswer Load (2.5ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#edit (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"id"=>"1920588793"}
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+Rendering template within layouts/application
+Rendering answers/edit
+  [4;36;1mQuestion Load (3.3ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Completed in 18ms (View: 11, DB: 14) | 200 OK [http://test.host/answers/1920588793/edit]
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing AnswersController#new (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"question_id"=>#<Question id: 1909853392, lesson_id: 666426138, text: "home", created_at: "2010-01-20 17:44:45", updated_at: "2010-01-20 17:44:45", level_id: 1649692261, last_attempt_date: "2010-01-20 18:44:45", active: true, next_attempt_date: "2010-01-20 18:44:45">}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering answers/new
+Completed in 11ms (View: 5, DB: 8) | 200 OK [http://test.host/answers/new?question_id=1909853392]
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAnswer Load (2.6ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+
+
+Processing AnswersController#update (for 0.0.0.0 at 2010-01-20 18:44:46) [PUT]
+  Parameters: {"id"=>"1920588793", "answer"=>{"text"=>"changed answer"}}
+  [4;36;1mAnswer Load (2.9ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Update (1.1ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:44:46.320265', "text" = E'changed answer' WHERE "id" = 1920588793[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 16ms (DB: 12) | 302 Found [http://test.host/answers/1920588793?answer%5Btext%5D=changed+answer]
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+
+
+Processing LessonsController#create (for 0.0.0.0 at 2010-01-20 18:44:46) [POST]
+  Parameters: {"lesson"=>{"name"=>"just created", "learning_schema"=>#<LearningSchema id: 1667104992, name: "default", description: "Default learning schema", created_at: "2010-01-20 17:44:45", updated_at: "2010-01-20 17:44:45">}}
+  [4;35;1mSQL (0.6ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (1.6ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'just created') LIMIT 1[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "lesson" ("name", "created_at", "updated_at", "learning_schema_id", "description") VALUES(E'just created', '2010-01-20 17:44:46.403194', '2010-01-20 17:44:46.403194', 1667104992, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/1051822756
+Completed in 28ms (DB: 25) | 302 Found [http://test.host/lessons?lesson%5Blearning_schema%5D=1667104992&lesson%5Bname%5D=just+created]
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mLesson Load (2.3ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#destroy (for 0.0.0.0 at 2010-01-20 18:44:46) [DELETE]
+  Parameters: {"id"=>"666426138"}
+  [4;36;1mLesson Load (3.0ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (3.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (2.9ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.9ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.6ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.6ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.6ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons
+Completed in 31ms (DB: 23) | 302 Found [http://test.host/lessons/666426138]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "lesson" [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#edit (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;36;1mLesson Load (3.0ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering lessons/edit
+  [4;35;1mLearningSchema Load (2.6ms)[0m   [0mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (8.0ms)
+Completed in 18ms (View: 10, DB: 10) | 200 OK [http://test.host/lessons/666426138/edit]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+
+
+Processing LessonsController#index (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  [4;36;1mLesson Load (2.8ms)[0m   [0;1mSELECT * FROM "lesson" [0m
+Rendering template within layouts/application
+Rendering lessons/index
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 1051822755) [0m
+Completed in 16ms (View: 9, DB: 7) | 200 OK [http://test.host/lessons]
+  [4;35;1mSQL (1.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+
+
+Processing LessonsController#new (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+Rendering template within layouts/application
+Rendering lessons/new
+  [4;35;1mLearningSchema Load (2.6ms)[0m   [0mSELECT * FROM "learning_schema" [0m
+Rendered lessons/_form (6.2ms)
+Completed in 11ms (View: 8, DB: 4) | 200 OK [http://test.host/lessons/new]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#show (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"id"=>"666426138"}
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mQuestion Load (5.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."lesson_id" = 666426138) ORDER BY level_id DESC, created_at DESC LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering lessons/show
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+Rendered lessons/_lesson (5.5ms)
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;35;1mLevel Load (3.0ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+Completed in 64ms (View: 30, DB: 34) | 200 OK [http://test.host/lessons/666426138]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing LessonsController#update (for 0.0.0.0 at 2010-01-20 18:44:46) [PUT]
+  Parameters: {"lesson"=>{"name"=>"changed lesson name"}, "id"=>"666426138"}
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (1.2ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'changed lesson name' AND "lesson".id <> 666426138) LIMIT 1[0m
+  [4;36;1mLesson Update (0.8ms)[0m   [0;1mUPDATE "lesson" SET "updated_at" = '2010-01-20 17:44:46.696578', "name" = E'changed lesson name' WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 18ms (DB: 11) | 302 Found [http://test.host/lessons/666426138?lesson%5Bname%5D=changed+lesson+name]
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2010-01-20 18:44:46) [POST]
+  Parameters: {"lesson_id"=>"666426138", "question"=>{"text"=>"test question"}, "answer"=>{"text"=>"test answer"}}
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:44:46.794328', 666426138, '2010-01-20 17:44:46.794328', '2010-01-20 17:44:46.779140', E'test question', '2010-01-20 17:44:46.766680', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:44:46.806646', '2010-01-20 17:44:46.806646', E'test answer', 1) RETURNING "id"[0m
+Redirected to http://test.host/lessons/666426138
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Completed in 66ms (DB: 26) | 302 Found [http://test.host/questions?answer%5Btext%5D=test+answer&lesson_id=666426138&question%5Btext%5D=test+question]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "question" [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#destroy (for 0.0.0.0 at 2010-01-20 18:44:46) [DELETE]
+  Parameters: {"id"=>"1909853392"}
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.8ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;36;1mAnswer Destroy (0.6ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/lessons/666426138
+Completed in 20ms (DB: 18) | 302 Found [http://test.host/questions/1909853392]
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM "question" [0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#edit (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/edit
+  [4;35;1mLesson Load (53.3ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Completed in 83ms (View: 25, DB: 65) | 200 OK [http://test.host/questions/1909853392/edit]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.7ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+
+
+Processing QuestionsController#new (for 0.0.0.0 at 2010-01-20 18:44:46) [GET]
+  Parameters: {"lesson_id"=>#<Lesson id: 666426138, name: "Test lesson 01", description: "Description of test lesson 01", created_at: "2010-01-20 17:44:45", updated_at: "2010-01-20 17:44:45", learning_schema_id: 1667104992>}
+  [4;35;1mLesson Load (2.7ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 12ms (View: 6, DB: 6) | 200 OK [http://test.host/questions/new?lesson_id=666426138]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#show (for 0.0.0.0 at 2010-01-20 18:44:47) [GET]
+  Parameters: {"id"=>"1909853392"}
+  [4;35;1mQuestion Load (3.3ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (3.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+Completed in 37ms (View: 18, DB: 21) | 200 OK [http://test.host/questions/1909853392]
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+
+
+Processing QuestionsController#update (for 0.0.0.0 at 2010-01-20 18:44:47) [PUT]
+  Parameters: {"id"=>1909853392, "question"=>{"text"=>"home222"}}
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (0.9ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:44:47.102314', "text" = E'home222' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/questions/1909853392
+Completed in 24ms (DB: 16) | 302 Found [http://test.host/questions/1909853392?question%5Btext%5D=home222]
+  [4;35;1mQuestion Load (3.2ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_encoding TO 'unicode'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.5ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mQuestion Load (1.7ms)[0m   [0mSELECT "question".id FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLevel Load (5.5ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) [0m
+  [4;36;1mLevel Destroy (0.8ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2083576775[0m
+  [4;35;1mLevel Destroy (0.8ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1649692261[0m
+  [4;36;1mLevel Destroy (0.8ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 357793523[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 207236936[0m
+  [4;36;1mLevel Destroy (0.8ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 2069700574[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 1698269822[0m
+  [4;36;1mLevel Destroy (0.6ms)[0m   [0;1mDELETE FROM "level" WHERE "id" = 306100972[0m
+  [4;35;1mLevel Destroy (0.7ms)[0m   [0mDELETE FROM "level" WHERE "id" = 188214097[0m
+  [4;36;1mLearningSchema Destroy (0.7ms)[0m   [0;1mDELETE FROM "learning_schema" WHERE "id" = 1667104992[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (2.4ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLearningSchema Load (1.2ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" IS NULL) LIMIT 1[0m
+  [4;36;1mLearningSchema Load (1.8ms)[0m   [0;1mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'default') LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLevel Load (1.2ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (1.1ms)[0m   [0mSELECT "learning_schema".id FROM "learning_schema" WHERE ("learning_schema"."name" = E'test') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mQuestion Load (3.2ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (4.4ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question".lesson_id = 666426138) [0m
+  [4;35;1mAnswer Load (3.2ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.6ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 926834397) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 2064220032[0m
+  [4;35;1mQuestion Destroy (0.6ms)[0m   [0mDELETE FROM "question" WHERE "id" = 926834397[0m
+  [4;36;1mLesson Destroy (0.7ms)[0m   [0;1mDELETE FROM "lesson" WHERE "id" = 666426138[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mQuestion Load (2.6ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mAnswer Load (2.0ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mQuestion Load (3.1ms)[0m   [0;1mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 926834397) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level"."id" = 1649692261) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;35;1mQuestion Update (0.8ms)[0m   [0mUPDATE "question" SET "updated_at" = '2010-01-20 17:46:29.730361', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:46:29.699492', "last_attempt_date" = '2010-01-20 17:46:29.683793' WHERE "id" = 1909853392[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 926834397) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:46:29.743560', "level_id" = 357793523, "next_attempt_date" = '2010-01-21 15:46:29.717667', "last_attempt_date" = '2010-01-20 17:46:29.717400' WHERE "id" = 926834397[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:46:29.759935', "next_attempt_date" = '2010-01-20 18:46:29.699492' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:46:29.775965', "next_attempt_date" = '2010-01-20 16:46:29.699492' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answer" WHERE ("answer".question_id = 1909853392) [0m
+  [4;36;1mQuestion Update (0.8ms)[0m   [0;1mUPDATE "question" SET "updated_at" = '2010-01-20 17:46:29.800579', "level_id" = 207236936, "next_attempt_date" = '2010-01-23 15:46:29.794106', "last_attempt_date" = '2010-01-20 17:46:29.793882' WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM "question" WHERE ("question".lesson_id = 666426138 AND (next_attempt_date <= CURRENT_TIMESTAMP)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (1.2ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" IS NULL) LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'') LIMIT 1[0m
+  [4;36;1mLesson Load (1.3ms)[0m   [0;1mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 02') LIMIT 1[0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLesson Load (1.1ms)[0m   [0mSELECT "lesson".id FROM "lesson" WHERE ("lesson"."name" = E'Test lesson 03') LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 254316707) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.4ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 254316707) [0m
+  [4;35;1mLevel Load (2.4ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 254316707 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" IS NULL AND "level".learning_schema_id IS NULL) LIMIT 1[0m
+  [4;35;1mLearningSchema Load (2.3ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (1.3ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.3ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 0 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mLevel Load (1.1ms)[0m   [0;1mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;35;1mLevel Load (1.2ms)[0m   [0mSELECT "level".id FROM "level" WHERE ("level"."level" = 8 AND "level".learning_schema_id = 1667104992) LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.6ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.4ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853392) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (3.0ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853392) ORDER BY priority ASC[0m
+  [4;36;1mAnswer Destroy (0.7ms)[0m   [0;1mDELETE FROM "answer" WHERE "id" = 1920588793[0m
+  [4;35;1mAnswer Destroy (0.7ms)[0m   [0mDELETE FROM "answer" WHERE "id" = 92203887[0m
+  [4;36;1mQuestion Destroy (0.7ms)[0m   [0;1mDELETE FROM "question" WHERE "id" = 1909853392[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mAnswer Load (2.0ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer"."id" = 1920588793) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.5ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.1ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.7ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.5ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "question" ("level_id", "created_at", "lesson_id", "updated_at", "next_attempt_date", "text", "last_attempt_date", "active") VALUES(1649692261, '2010-01-20 17:46:30.074686', 666426138, '2010-01-20 17:46:30.074686', '2010-01-20 18:32:52.000000', E'q01', '2010-01-20 17:46:30.065397', 't') RETURNING "id"[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:46:30.088058', '2010-01-20 17:46:30.088058', E'a01', 1) RETURNING "id"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "answer" ("question_id", "created_at", "updated_at", "text", "priority") VALUES(1909853393, '2010-01-20 17:46:30.099361', '2010-01-20 17:46:30.099361', E'a02', 2) RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Load (2.5ms)[0m   [0mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mAnswer Update (0.8ms)[0m   [0mUPDATE "answer" SET "updated_at" = '2010-01-20 17:46:30.111264', "priority" = 3 WHERE "id" = 2064220033[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "question" WHERE ("question"."id" = 1909853393) [0m
+  [4;36;1mAnswer Load (2.4ms)[0m   [0;1mSELECT * FROM "answer" WHERE ("answer".question_id = 1909853393) ORDER BY priority ASC LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLesson Load (2.4ms)[0m   [0mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.8ms)[0m   [0mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 0) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 1) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 2) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 3) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 4) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 5) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.2ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.7ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 6) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mLearningSchema Load (2.3ms)[0m   [0;1mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;35;1mLevel Load (2.3ms)[0m   [0mSELECT * FROM "level" WHERE (learning_schema_id = 1667104992 and level > 7) ORDER BY level ASC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mLesson Load (2.4ms)[0m   [0;1mSELECT * FROM "lesson" WHERE ("lesson"."id" = 666426138) [0m
+  [4;35;1mLearningSchema Load (2.2ms)[0m   [0mSELECT * FROM "learning_schema" WHERE ("learning_schema"."id" = 1667104992) [0m
+  [4;36;1mLevel Load (2.8ms)[0m   [0;1mSELECT * FROM "level" WHERE ("level".learning_schema_id = 1667104992) ORDER BY level ASC LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m

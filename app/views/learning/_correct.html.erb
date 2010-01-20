@@ -5,14 +5,22 @@
 <table align="center">
 	<tr>
 		<td>
-			<% form_remote_tag :url => {:action => 'correct'} do %>
+			<% form_remote_tag :url => {:action => 'correct'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
 				<%= submit_tag "Next [Enter]", :id => 'nextButton' %>
 			<% end -%>				
 		</td>
 		<td>
-			<% form_remote_tag :url => {:action => 'wrong'} do %>
+			<% form_remote_tag :url => {:action => 'wrong'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
 				<%= submit_tag "I don't know [w]", :id => 'wrongButton' %>
 			<% end %>							
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'onlyRepetitions'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
+				<%= submit_tag "Only repetitions [r]", :id => 'repetitionsButton' %>
+			<% end -%>				
 		</td>
 	</tr>
 </table>

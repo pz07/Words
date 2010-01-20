@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
           :order  => 'priority ASC'
           
   #walidacja
-  validates_presence_of :text, :lesson, :level, :last_level_update, :active
+  validates_presence_of :text, :lesson, :level, :last_attempt_date, :active
   validate :must_have_at_least_one_answer
   
   def correct? answer
@@ -52,8 +52,13 @@ class Question < ActiveRecord::Base
       self.active = false
     else
       self.level = n 
-      self.last_level_update = Time.now
+      self.last_attempt_date = Time.now
+      self.next_attempt_date = compute_next_attempt_date
     end
+  end
+  
+  def compute_next_attempt_date
+    2.hours.ago(self.last_attempt_date.advance(:days => self.level.day_interval)) 
   end
   
   protected

@@ -18,10 +18,13 @@
   <tr>
     <th>Question</th>
     <th>Answer</th>
+    <th>Last attempt</th>
+    <th>Next attempt</th>
+    <th></th>
   </tr>
 <% if @questions.empty?%>
 	<tr>
-		<td colspan=2>No questions yet.</td>
+		<td colspan=4>No questions yet.</td>
 	</tr>
 <%end%>
 <% @questions.each do |question| %>
@@ -33,6 +36,19 @@
 			(and <%= (question.answers.size) -1%> more)
 		<%end%>
 	</td>
+    <td><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></td>
+    <td>
+    	<%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %>
+	</td>
+	<% if question.next_attempt_date <= Time.now%>
+		<td style='background-color: #AEFFB3;'>
+			now!	
+		</td>
+	<% else%>
+		<td>
+			<%= distance_of_time_in_words_to_now(question.next_attempt_date)%>
+		</td>
+	<% end%>
     <td style="background-color: <%=h question.level.color -%>; color: grey;">
     	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
 	</td>
