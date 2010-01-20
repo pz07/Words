@@ -1,13 +1,13 @@
 class RemoveUnconsistantData < ActiveRecord::Migration
   def self.up
     Level.find(:all, :conditions => "learning_schema_id is null").each do |l|
-      l.destroy!
+      l.delete
     end
     Question.find(:all, :conditions => "lesson_id is null or level_id is null").each do |q|
-      q.destroy!
+      q.delete
     end
     Answer.find(:all, :conditions => "question_id is null").each do |a|
-      a.destroy!
+      a.delete
     end
   end
 
