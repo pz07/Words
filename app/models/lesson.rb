@@ -3,7 +3,7 @@ class Lesson < ActiveRecord::Base
   #zależności
   has_many :questions, :dependent => :destroy
   has_many :questions_to_learn, :class_name => 'Question', :conditions  => 
-                  ['next_attempt_date <= ?', Time.now]
+                  ['next_attempt_date <= ?', Time.local]
   belongs_to :learning_schema
   
   #walidacja
