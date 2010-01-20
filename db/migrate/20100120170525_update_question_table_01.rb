@@ -1,4 +1,4 @@
-class UpdateQuestionTable01 < ActiveRecord::Migration
+class DeleteInvalidRecords < ActiveRecord::Migration
   def self.up
     Level.find(:all, :conditions => "learning_schema_id is null").each do |l|
       l.destroy!
