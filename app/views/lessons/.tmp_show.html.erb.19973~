@@ -36,10 +36,9 @@
 			(and <%= (question.answers.size) -1%> more)
 		<%end%>
 	</td>
-    <td><%=h question.last_attempt_date %></td>
-    <!--td><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></td-->
+    <td><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></td>
     <td>
-    	<%=h question.next_attempt_date %>
+    	<%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %>
 	</td>
 	<% if question.next_attempt_date <= Time.now%>
 		<td style='background-color: #AEFFB3;'>

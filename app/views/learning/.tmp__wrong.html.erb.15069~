@@ -1,0 +1,37 @@
+<div id="msgDiv" style="color: red; font-size: 12pt;">Wrong: <%=@levenshteinPercent%>%</div>
+<div id="qDiv" style="padding-top: 20px; visibility: hidden;">
+	<div style="color: red; font-size: 16pt;">
+		<%= params[:answer]%>
+	</div>
+	<div style="color: green; font-size: 16pt;">
+		<%= wrong.first_answer.text%><br/><br/>
+	</div>
+</div>
+<br>
+<br>
+<table align="center">
+	<tr>
+		<td>
+			<% form_remote_tag :url => {:action => 'wrong'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
+				<%= submit_tag "Again [Enter]", :id => "againButton" %>
+			<% end -%>				
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'skip'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
+				<%= submit_tag "Skip [s]", :id => "skipButton" %>
+			<% end -%>				
+		</td>
+		<td>
+			<% form_remote_tag :url => {:action => 'correct'}, :before => "showWaitDiv();", 
+											:complete => "hideWaitDiv();" do %>
+				<%= submit_tag "I know [c]", :id => "correctButton" %>
+			<% end %>							
+		</td>
+		<td>
+			<input id="showAnswerButton" type="button" value="Show answer [a]" 
+							onclick="$('qDiv').style.visibility = 'visible'; new Effect.Pulsate('qDiv')">
+		</td>
+	</tr>
+</table>
