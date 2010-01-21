@@ -41,7 +41,7 @@
     <td>
     	<%=h question.next_attempt_date %>
 	</td>
-	<% if question.next_attempt_date <= Time.now%>
+	<% if question.next_attempt_date <= Time.now.utc%>
 		<td style='background-color: #AEFFB3;'>
 			now!	
 		</td>

@@ -14,9 +14,7 @@
 			<td style="width: 25%; border: 1px solid blue; vertical-align: top;">
 				Tu będzie menu...
 				<br/>
-				<%= Time.now%><br/>
-				utc<br/>
-				<%= Time.now.utc%>
+				<%= Time.now%>
 			</td>
 			<td style="width: 60%; vertical-align: top; padding-left: 10px;">
 				<p style="color: green"><%= flash[:notice] %></p>
