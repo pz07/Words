@@ -9,7 +9,7 @@ class Lesson < ActiveRecord::Base
   validates_uniqueness_of :name
   
   def questions_to_learn
-    Question.find(:all, :conditions => ['next_attempt_date <= ?', Time.now.utc])
+    Question.find(:all, :conditions => ['next_attempt_date <= ?', Time.now.utc, 'lesson_id = ?', self.id ])
   end
   
   #def questions_to_learn_ids
