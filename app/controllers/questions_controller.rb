@@ -41,6 +41,8 @@ class QuestionsController < ApplicationController
           @question.save
           @answer.save
           
+          @question.lesson.reload
+          
           flash[:notice] = 'Question was successfully added.'
           redirect_to lesson_path(@question.lesson)    
         end
