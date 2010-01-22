@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Lessons: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+	<table style="width: 100%; height: 300px;">
+		<tr>
+			<td style="width: 25%; border: 1px solid blue; vertical-align: top;">
+				Tu będzie menu...
+				<br/>
+				<%= Time.now%><br/>
+				utc<br/>
+				<%= Time.now.utc%>
+			</td>
+			<td style="width: 60%; vertical-align: top; padding-left: 10px;">
+				<p style="color: green"><%= flash[:notice] %></p>
+				<%= yield %>
+			</td>
+			<td>
+				
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

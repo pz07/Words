@@ -36,7 +36,7 @@ class LearningAttempt
     i = self.questions_to_learn.index self.current
     if i
       deleted = self.questions_to_learn.delete_at i
-    elsif !@repeated
+    else
       i = self.questions_to_repeat.index self.current
       if i
         deleted = self.questions_to_repeat.delete_at i
@@ -45,6 +45,7 @@ class LearningAttempt
 
     if @repeated
       @just_repeated << self.current
+      deleted = nil
     else
        @just_passed << self.current
        self.questions_passed << self.current
@@ -60,9 +61,8 @@ class LearningAttempt
   def wrong
     if self.questions_to_repeat.last != self.current
       self.questions_to_repeat << self.current
+      @repeated = self.current
     end
-  
-    @repeated = self.current
  end
 
  def skip

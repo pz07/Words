@@ -4,12 +4,12 @@ home:
   lesson: lesson01
   text: home
   level: default0
-  last_attempt_date: <%= Time.now%>
-  next_attempt_date: <%= Time.now%>
+  last_attempt_date: <%= 2.hours.ago(Time.now)%>
+  next_attempt_date: <%= 2.hours.ago(Time.now)%>
 
 tree:
   lesson: lesson01
   text: tree
   level: default0
-  last_attempt_date: <%= Time.now%>
-  next_attempt_date: <%= Time.now%>
+  last_attempt_date: <%= 2.hours.ago(Time.now)%>
+  next_attempt_date: <%= 2.hours.ago(Time.now)%>

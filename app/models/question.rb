@@ -52,7 +52,7 @@ class Question < ActiveRecord::Base
       self.active = false
     else
       self.level = n 
-      self.last_attempt_date = Time.now.utc
+      self.last_attempt_date = Time.now
       self.next_attempt_date = compute_next_attempt_date
     end
   end

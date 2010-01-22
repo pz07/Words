@@ -27,8 +27,8 @@ class QuestionsController < ApplicationController
     
     @question.lesson = Lesson.find(params[:lesson_id])
     @question.level = @question.lesson.learning_schema.start_level
-    @question.last_attempt_date = Time.now.utc
-    @question.next_attempt_date = Time.now.utc
+    @question.last_attempt_date = Time.now
+    @question.next_attempt_date = Time.now
     
     @answer = Answer.new(params[:answer])
     @answer.priority = 1
