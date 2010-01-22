@@ -24,7 +24,7 @@
     <td><%=h lesson.name %></td>
     <td><%=h truncate lesson.description, :length => 80 %></td>
     <td class="right"><%=h lesson.questions.size %></td>
-    <td class="right"><%=h lesson.questions_to_learn(true).size %></td>
+    <td class="right"><%=h lesson.questions_to_learn.size %></td>
     <td><%= link_to 'Show', lesson %></td>
   </tr>
 <% end %>
