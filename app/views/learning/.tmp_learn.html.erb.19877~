@@ -54,7 +54,7 @@
 		<td>
 			<table style="width: 100%;">
 				<tr>
-					<% @attempt.questions_to_learn(true).each do |q|%>
+					<% @attempt.questions_to_learn.each do |q|%>
 						<td id="question_<%=q%>" style="border: 1px solid black; background-color: red; padding: 1px 1px 1px 1px;">&nbsp;</td>
 					<%end%>		
 				</tr>
