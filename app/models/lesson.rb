@@ -2,13 +2,15 @@ class Lesson < ActiveRecord::Base
 
   #zależności
   has_many :questions, :dependent => :destroy
-  has_many :questions_to_learn, :class_name => 'Question', :conditions  => 
-                  ['next_attempt_date <= ?', Time.now.utc]
   belongs_to :learning_schema
   
   #walidacja
   validates_presence_of :name, :learning_schema
   validates_uniqueness_of :name
+  
+  def questions_to_learn
+    Question.find(:all, :conditions => ['next_attempt_date <= ?', Time.now.utc])
+  end
   
   #def questions_to_learn_ids
   #  to_learn = []
