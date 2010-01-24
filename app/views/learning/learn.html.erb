@@ -10,13 +10,18 @@
 		
 		//alert('mam przycisk: '+key);
 		
-		var buttonId = shorts[key]
-		if(buttonId){
-			var button = document.getElementById(buttonId);
-			if (button && button.click) {
-				button.click();
-				return;
-			}
+		if(event.target.id == 'answer' && key == 13){
+			submitQuestion();
+		}
+		else{
+			var buttonId = shorts[key]
+			if(buttonId){
+				var button = document.getElementById(buttonId);
+				if (button && button.click) {
+					button.click();
+					return;
+				}
+			}	
 		}
 	}
 	
@@ -34,6 +39,10 @@
 	
 	function hideWaitDiv(){
 		Element.hide('waitDiv');
+	}
+	
+	function submitQuestion(){
+		$('submitButton').click();
 	}
 	
 </script>

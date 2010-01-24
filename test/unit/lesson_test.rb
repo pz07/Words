@@ -77,6 +77,15 @@ class LessonTest < ActiveSupport::TestCase
     assert_equal 0, to_learn.size
   end
   
+  test "questions_to_learn_ids" do
+    l = lesson(:lesson01)
+    
+    to_learn = l.questions_to_learn_ids
+    assert_equal 2, to_learn.size
+    
+    assert to_learn[0].is_a?(Integer)
+  end
+  
   test "questions deleted" do
     qid = question(:home).id
     aid = answer(:home0).id

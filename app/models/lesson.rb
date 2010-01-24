@@ -13,8 +13,9 @@ class Lesson < ActiveRecord::Base
   end
   
   def questions_to_learn_ids
-    Question.find(:all, :conditions => ['next_attempt_date <= ? and lesson_id = ?', Time.now.utc, self.id ],
-                      :select => "id")
+    self.questions_to_learn.collect do |q|
+      q.id
+    end
   end
   
   #def questions_to_learn_ids

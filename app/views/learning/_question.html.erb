@@ -4,8 +4,16 @@
 <% form_remote_tag(:url => {:action => 'check'}, :before => "showWaitDiv();", 
 						:complete => "hideWaitDiv();") do %>
 	<%= hidden_field_tag :question_id, question.id%>
-	<%= text_field_tag 'answer', '', :size => 100 %>
-	<%= submit_tag "Check" %>
+	<table align="center">
+	  <tr>
+	  	<td>
+	      <%= text_area_tag 'answer', '', :cols => 100, :rows => 1, :style => "height: 15px;" %>
+		</td>
+		<td>
+		  <%= submit_tag "Check", :id => "submitButton" %>
+		</td>
+	  </tr>
+	</table>
 <% end %>				
 
 <%=javascript_tag("$('answer').focus()");%>
