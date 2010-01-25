@@ -47,3 +47,24 @@
 		</tr>
 	<%end%>	
 </table>
+
+<br/><br/>
+
+<table class="dblist">
+	<tr>
+		<th>Level</th>
+		<th>Start</th>
+		<th>Finished</th>
+		<th>Correct</th>
+		<th>Wrong</th>
+	</tr>
+	<% @question.question_level_stats.each do |s| %>
+		<tr>
+			<td style="background-color: <%= s.level.color%>"><%= s.level.level%></td>
+			<td><%=h s.learning_begin.strftime('%d-%m-%Y %H:%M') if s.learning_begin%></td>
+			<td><%=h s.learning_finished.strftime('%d-%m-%Y %H:%M') if s.learning_finished%></td>
+			<td class="right"><%=h s.correct_answers%></td>
+			<td class="right"><%=h s.wrong_answers%></td>
+		</tr>
+	<%end%>	
+</table>
