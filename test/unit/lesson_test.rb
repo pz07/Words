@@ -38,12 +38,12 @@ class LessonTest < ActiveSupport::TestCase
     
     q01 = question(:home) 
     q02 = question(:tree)
-    
-    q01.next_level
-    q02.next_level
-    
+
     q01.save!
     q02.save!
+    
+    q01.correct_answer
+    q02.correct_answer
     
     l.reload
     
@@ -68,8 +68,7 @@ class LessonTest < ActiveSupport::TestCase
     to_learn = l.questions_to_learn
     assert_equal 1, to_learn.size
     
-    q01.next_level
-    q01.save!
+    q01.correct_answer
     
     l.reload
     

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100120170525) do
+ActiveRecord::Schema.define(:version => 20100124213918) do
 
   create_table "answer", :force => true do |t|
     t.integer  "question_id",                :null => false
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(:version => 20100120170525) do
     t.datetime "last_attempt_date"
     t.boolean  "active",            :default => true,                  :null => false
     t.datetime "next_attempt_date", :default => '2010-01-20 18:32:52', :null => false
+  end
+
+  create_table "question_level_stat", :force => true do |t|
+    t.integer  "question_id",                      :null => false
+    t.integer  "level_id",                         :null => false
+    t.datetime "learning_begin",                   :null => false
+    t.datetime "learning_finished"
+    t.integer  "correct_answers",   :default => 0, :null => false
+    t.integer  "wrong_answers",     :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "session", :force => true do |t|

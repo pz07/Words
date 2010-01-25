@@ -69,54 +69,56 @@ class QuestionTest < ActiveSupport::TestCase
  end
  
  test "test next_level" do
+   @q.save!
+   
    t = @q.last_attempt_date
   
    assert_equal 0, @q.level.level
    assert @q.active
   
-   @q.next_level
+   @q.correct_answer
    assert_equal 1, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 2, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 3, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 4, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 5, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 6, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 7, @q.level.level
    assert @q.last_attempt_date > t
    assert @q.active
    t = @q.last_attempt_date
    
-   @q.next_level
+   @q.correct_answer
    assert_equal 7, @q.level.level
    assert @q.last_attempt_date == t
    assert !@q.active
@@ -135,4 +137,66 @@ class QuestionTest < ActiveSupport::TestCase
       Answer.find(aid)
     end
  end
+ 
+ test "question level stats" do
+   @q.save!
+   
+   assert_equal 1, @q.question_level_stats.length
+   assert_equal 0, @q.question_level_stats[0].correct_answers
+   assert_equal 0, @q.question_level_stats[0].wrong_answers
+   
+   stat01 = @q.current_level_stats.id
+   
+   @q.correct_answer
+   @q.reload
+   
+   assert_equal 2, @q.question_level_stats.length
+   assert_equal 1, @q.question_level_stats[0].correct_answers
+   assert_equal 0, @q.question_level_stats[0].wrong_answers
+   assert_equal 0, @q.question_level_stats[1].correct_answers
+   assert_equal 0, @q.question_level_stats[1].wrong_answers
+   
+   stat02 = @q.current_level_stats.id
+   assert_not_equal stat01, stat02
+
+   @q.text = "bla bla bla"
+   @q.save!
+
+   @q.reload
+   
+   assert_equal 2, @q.question_level_stats.length
+
+   stat03 = @q.current_level_stats.id
+   assert_equal stat02, stat03
+   
+   @q.wrong_answer
+   @q.reload
+   
+   assert_equal 2, @q.question_level_stats.length
+   assert_equal 1, @q.question_level_stats[0].correct_answers
+   assert_equal 0, @q.question_level_stats[0].wrong_answers
+   assert_equal 0, @q.question_level_stats[1].correct_answers
+   assert_equal 1, @q.question_level_stats[1].wrong_answers
+   
+   @q.wrong_answer
+   @q.reload
+   
+   assert_equal 2, @q.question_level_stats.length
+   assert_equal 1, @q.question_level_stats[0].correct_answers
+   assert_equal 0, @q.question_level_stats[0].wrong_answers
+   assert_equal 0, @q.question_level_stats[1].correct_answers
+   assert_equal 2, @q.question_level_stats[1].wrong_answers
+   
+   @q.correct_answer
+   @q.reload
+   
+   assert_equal 3, @q.question_level_stats.length
+   assert_equal 1, @q.question_level_stats[0].correct_answers
+   assert_equal 0, @q.question_level_stats[0].wrong_answers
+   assert_equal 1, @q.question_level_stats[1].correct_answers
+   assert_equal 2, @q.question_level_stats[1].wrong_answers
+   assert_equal 0, @q.question_level_stats[2].correct_answers
+   assert_equal 0, @q.question_level_stats[2].wrong_answers
+ end
+ 
 end

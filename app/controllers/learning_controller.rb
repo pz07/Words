@@ -56,9 +56,7 @@ class LearningController < ApplicationController
 
     if passed
       q = Question.find(passed)
-      q.next_level
-      
-      q.save!
+      q.correct_answer
     end
 
     redirect_to(:action => "question")
@@ -67,6 +65,8 @@ class LearningController < ApplicationController
   def wrong
     @attempt = session[:attempt]
     @attempt.wrong
+    
+    Question.find(@attempt.current).wrong_answer
     
     redirect_to(:action => "question")
   end
