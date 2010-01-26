@@ -1,0 +1,32 @@
+<div class="title">Editing answer</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Back', :controller => "questions", :action => "show", :id => @answer.question %>
+</div>
+<br>
+
+<% form_for(@answer, :action => 'create') do |f| %>
+
+<table class="form">
+	<tr>
+		<td colspan=2>
+			<%= error_messages_for :answer%>			
+		</td>
+	</tr>
+	<tr>
+		<th>Question:</th>
+		<td><%= @answer.question.text %></td>
+	</tr>
+	<tr>
+		<th>Answer:</th>
+		<td><%= f.text_field :text, :size => 50 %></td>
+	</tr>
+	<tr>
+		<th colspan=2 style="text-align: center;">
+			<%= f.submit 'Save' %>			
+		</th>
+	</tr>
+</table>
+
+<% end %>

@@ -3,6 +3,8 @@ page.replace_html("question", :partial => "question", :object => @question)
 page.visual_effect :pulsate, "question_#{@question.id}"
      
 page << "clearShorts()"
+
+page << "questionId = #{@question.id}"
                                               
 if @mark_correct
   @mark_correct.each do |c|

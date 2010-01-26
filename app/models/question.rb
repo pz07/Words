@@ -27,8 +27,10 @@ class Question < ActiveRecord::Base
   end
   
   def correct? answer
+    answer.strip! if answer
+    
     answers.each do |a|
-      if a.text == answer
+      if a.text.strip == answer
         return a
       end
     end
@@ -37,11 +39,13 @@ class Question < ActiveRecord::Base
   end
   
   def correct answer
+    answer.strip! if answer
+    
     result = nil
     answer_size = nil;
     
     answers.each do |a|
-      l = levenshtein(a.text, answer);
+      l = levenshtein(a.text.strip, answer);
       if !result or l < result
         result = l
         answer_size = a.text.length

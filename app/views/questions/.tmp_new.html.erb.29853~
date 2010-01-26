@@ -1,0 +1,36 @@
+<div class="title">Add question</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Back', :controller => "lessons", :action => "show", :id => @question.lesson %>
+</div>
+<br>
+
+<% form_for(@question, :action => 'create') do |f| %>
+  	<%= hidden_field_tag :lesson_id, @question.lesson.id %>
+
+<table class="form">
+	<tr>
+		<td colspan=2>
+			<%= error_messages_for :question%>			
+		</td>
+	</tr>
+	<tr>
+		<th>Question:</th>
+		<td><%= f.text_field :text, :size => 50 %></td>
+	</tr>
+	<% fields_for :answer do |answer| %>
+		<tr>
+			<th>Answer:</th>
+			<td><%= answer.text_field :text, :size => 50%></td>
+		</tr>
+	<% end %>
+	<tr>
+		<th colspan=2 style="text-align: center;">
+			<%= f.submit 'Save' %>			
+		</th>
+	</tr>
+</table>
+
+<% end %>
+

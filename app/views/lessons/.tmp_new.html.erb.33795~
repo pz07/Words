@@ -1,0 +1,12 @@
+<div class="title">New lesson</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Back', lessons_path %>
+</div>
+<br>
+
+<% form_for(@lesson) do |f| %>
+  <%= render(:partial => "form" , :object => f) %>
+<% end %>
+

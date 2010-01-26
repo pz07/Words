@@ -79,4 +79,5 @@ class QuestionsController < ApplicationController
     flash[:notice] = 'Question was successfully deleted'
     redirect_to :controller => 'lessons', :action => 'show', :id => lesson
   end
+  
 end

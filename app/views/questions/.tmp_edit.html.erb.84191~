@@ -1,0 +1,31 @@
+<div class="title">Editing question</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Back', @question %>
+</div>
+<br>
+
+<% form_for(@question, :action => 'update') do |f| %>
+  <%= hidden_field_tag :lesson_id, @question.lesson.id %>
+
+<table class="form">
+	<tr>
+		<td colspan=2>
+			<%= error_messages_for :question%>			
+		</td>
+	</tr>
+	<tr>
+		<th>Question:</th>
+		<td><%= f.text_field :text, :size => 50 %></td>
+	</tr>
+	<tr>
+		<th colspan=2 style="text-align: center;">
+			<%= f.submit 'Save' %>			
+		</th>
+	</tr>
+</table>
+
+<% end %>
+
+

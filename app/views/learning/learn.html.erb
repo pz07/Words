@@ -1,4 +1,6 @@
 <script>
+	
+	var questionId = null;
 
 	document.observe('keypress', handleKeyPress);
 	
@@ -45,6 +47,13 @@
 		$('submitButton').click();
 	}
 	
+	function showQuestionDetails(){
+		if (questionId != null) {
+			window.open("/questions/" + questionId + '?popup=true', "_blank", 
+					"width=500,height=500,location=no,menubar=no,scrollbars=yes,status=no,titlebar=no,toolbar=no");
+		}	
+	}
+	
 </script>
 
 <%= render :partial => "lessons/lesson", :object => @attempt.lesson%>
@@ -82,6 +91,11 @@
 					<%= submit_tag "Start [Enter]", :id => "startButton" %>
 			    <% end %>				
 			</div>						
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="button" value="Show question details" onclick="showQuestionDetails();"/>
 		</td>
 	</tr>
 </table>

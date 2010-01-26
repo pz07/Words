@@ -2,10 +2,15 @@
 <br>
 
 <div class="links">
-	<%= link_to 'Edit', edit_question_path(@question) %> |
-	<%= link_to 'Delete', @question, :confirm => 'Are you sure?', :method => :delete %> |
-	<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
-	<%= link_to 'Back', lesson_path(@question.lesson) %>
+	<% if params[:popup] == 'true'%>
+		<%= link_to 'Edit', :action => "edit", :id => @question %> |
+		<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
+	<% else %>
+		<%= link_to 'Edit', edit_question_path(@question) %> |
+		<%= link_to 'Delete', @question, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
+		<%= link_to 'Back', lesson_path(@question.lesson) %>
+	<% end%>
 </div>
 <br>
 
