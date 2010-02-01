@@ -13,9 +13,17 @@ class LessonsController < ApplicationController
   # GET /lesson/1
   # GET /lesson/1.xml
   def show
+    sort_order = "ASC"
+    sort_order = params[:sort_order] if params[:sort_order] 
+    
+    sort_column = "next_attempt_date"
+    sort_column = params[:sort_column] if params[:sort_column] 
+    
     @lesson = Lesson.find(params[:id])
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
-                      :conditions => {:lesson_id => @lesson}, :order => 'next_attempt_date ASC, level_id DESC, created_at DESC'
+                      :conditions => {:lesson_id => @lesson}, 
+                      :order => "#{sort_column} #{sort_order}",
+                      :joins => "left join level l on \"question\".level_id = l.id left join answer a on \"question\".id = a.question_id and a.priority = 1"
     
     respond_to do |format|
       format.html # show.html.erb

@@ -1,4 +1,14 @@
-<b><%= question.text %></b>
+<table style="width: 100%;">
+	<tr>
+		<td style="background-color: <%= question.level.color%>">
+			&nbsp;&nbsp;<%= question.level.level%>&nbsp;&nbsp;
+		</td>
+		<td style="width: 100%;">
+			<b><%= question.text %></b>			
+		</td>
+	</tr>
+</table>
+
 <br>
 <br>
 <% form_remote_tag(:url => {:action => 'check'}, :before => "showWaitDiv();", 

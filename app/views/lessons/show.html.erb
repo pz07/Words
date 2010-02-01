@@ -2,7 +2,7 @@
 <br>
 
 <div class="links">
-	<%= link_to 'Learn', :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%= link_to "Learn (#{@lesson.questions_to_learn.size} of #{@lesson.questions.size})", :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
 	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 	<%= link_to 'Delete', @lesson, :confirm => 'Are you sure?', :method => :delete %> |
 	<%= link_to 'Add question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>|
@@ -14,13 +14,29 @@
 
 <br/><br/>
 
-<table class="dblist">
+<%
+	sort_order = "ASC"
+	sort_order = "DESC" if params[:sort_order] == "ASC"
+%>
+
+<table class="dblist" style="width: 100%;">
   <tr>
-    <th>Question</th>
-    <th>Answer</th>
-    <th>Last attempt</th>
-    <th>Next attempt</th>
+    <th>
+    	<%= link_to "Question", :sort_column => "text", :sort_order => sort_order %>
+	</th>
+    <th>
+    	<%= link_to "Answer", :sort_column => "a.text", :sort_order => sort_order %>
+	</th>
+    <th>
+    	<%= link_to "Last attempt", :sort_column => "last_attempt_date", :sort_order => sort_order %>
+	</th>
+    <th>
+    	<%= link_to "Next attempt", :sort_column => "next_attempt_date", :sort_order => sort_order %>
+	</th>
     <th></th>
+    <th>
+    	<%= link_to "Level", :sort_column => "l.level", :sort_order => sort_order %>
+	</th>
   </tr>
 <% if @questions.empty?%>
 	<tr>
@@ -36,9 +52,9 @@
 			(and <%= (question.answers.size) -1%> more)
 		<%end%>
 	</td>
-    <td><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></td>
+    <td><nobr><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr></td>
     <td>
-    	<%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %>
+    	<nobr><%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr>
 	</td>
 	<% if question.next_attempt_date <= Time.now%>
 		<td style='background-color: #AEFFB3;'>

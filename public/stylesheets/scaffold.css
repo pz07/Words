@@ -13,8 +13,8 @@ pre {
 }
 
 a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:visited { color: #000; }
+a:hover { color: #000;}
 
 .fieldWithErrors {
   padding: 2px;
@@ -54,6 +54,10 @@ table.dblist tr th{
 	border: 1px solid black;
 	padding: 2px 10px 2px 10px;
 }
+
+table.dblist tr th a { color: white; text-decoration: none; }
+table.dblist tr th a:visited { color: white; }
+table.dblist tr th a:hover { color: white; background-color: #0070CA}
 
 table.dblist tr td{
 	background-color: white;
