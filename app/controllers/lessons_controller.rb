@@ -17,12 +17,15 @@ class LessonsController < ApplicationController
     sort_order = params[:sort_order] if params[:sort_order] 
     
     sort_column = "next_attempt_date"
-    sort_column = params[:sort_column] if params[:sort_column] 
+    sort_column = params[:sort_column] if params[:sort_column]
+    
+    out_sort = ", id DESC"
+    out_sort = ", next_attempt_date ASC " + out_sort unless sort_column.include? "next_attempt_date" 
     
     @lesson = Lesson.find(params[:id])
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
                       :conditions => {:lesson_id => @lesson}, 
-                      :order => "#{sort_column} #{sort_order}",
+                      :order => "#{sort_column} #{sort_order} #{out_sort}",
                       :joins => "left join level l on \"question\".level_id = l.id left join answer a on \"question\".id = a.question_id and a.priority = 1"
     
     respond_to do |format|

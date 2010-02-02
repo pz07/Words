@@ -80,4 +80,21 @@ class QuestionsController < ApplicationController
     redirect_to :controller => 'lessons', :action => 'show', :id => lesson
   end
   
+  def level_down
+    @question = Question.find(params[:id])
+
+    @question.prev_level
+
+    flash[:notice] = 'Question was successfully downgrade.'
+    redirect_to question_path(@question)    
+  end
+  
+  def level_up
+    @question = Question.find(params[:id])
+
+    @question.next_level
+
+    flash[:notice] = 'Question was successfully downgrade.'
+    redirect_to question_path(@question)    
+  end
 end

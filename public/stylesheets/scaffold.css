@@ -88,6 +88,7 @@ table.dbdetails tr th{
 table.dbdetails tr td{
 	background-color: white;
 	border: 1px solid gray;
+	padding: 1px 5px 1px 5px;
 }
 
 table.dbdetails tr td.right{

@@ -4,9 +4,13 @@
 <div class="links">
 	<% if params[:popup] == 'true'%>
 		<%= link_to 'Edit', :action => "edit", :id => @question %> |
+		<%= link_to 'Level down', :action => "level_down", :id => @question, :confirm => 'Are you sure?' %> |
+		<%= link_to 'Level up', :action => "level_up", :id => @question, :confirm => 'Are you sure?' %> |
 		<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
 	<% else %>
 		<%= link_to 'Edit', edit_question_path(@question) %> |
+		<%= link_to 'Level down', :action => "level_down", :id => @question, :confirm => 'Are you sure?' %> |
+		<%= link_to 'Level up', :action => "level_up", :id => @question, :confirm => 'Are you sure?' %> |
 		<%= link_to 'Delete', @question, :confirm => 'Are you sure?', :method => :delete %> |
 		<%= link_to 'Add answer', :controller => 'answers', :action => "new", :question_id => @question %>|
 		<%= link_to 'Back', lesson_path(@question.lesson) %>
@@ -29,6 +33,18 @@
 			<span style="background-color: <%=@question.level.color%>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 			<%= @question.level.level%>/<%= @question.lesson.learning_schema.last_level.level%>
 		</td>
+	</tr>
+	<tr>
+		<th>Last attempt date:</th>
+		<td><%=h @question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></td>
+	</tr>
+	<tr>
+		<th>Next attempt date:</th>
+		<td><%=h @question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %></td>
+	</tr>
+	<tr>
+		<th>Active:</th>
+		<td><%= @question.active%></td>
 	</tr>
 	<tr>
 		<th>Active:</th>

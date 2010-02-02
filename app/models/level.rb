@@ -15,4 +15,10 @@ class Level < ActiveRecord::Base
                :conditions => [ "learning_schema_id = ? and level > ?", learning_schema.id, level])  
   end
   
+  def prev_level 
+    Level.find(:first,
+               :order => "level DESC",
+               :conditions => [ "learning_schema_id = ? and level < ?", learning_schema.id, level])  
+  end
+  
 end

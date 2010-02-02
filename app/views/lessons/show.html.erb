@@ -17,10 +17,16 @@
 <%
 	sort_order = "ASC"
 	sort_order = "DESC" if params[:sort_order] == "ASC"
+
+	page = 0
+	page = params[:page].to_i if params[:page]
 %>
 
 <table class="dblist" style="width: 100%;">
   <tr>
+  	<th>
+  		L.p.
+	</th>	
     <th>
     	<%= link_to "Question", :sort_column => "text", :sort_order => sort_order %>
 	</th>
@@ -43,8 +49,11 @@
 		<td colspan=4>No questions yet.</td>
 	</tr>
 <%end%>
-<% @questions.each do |question| %>
+<% @questions.each_index do |index| 
+		question = @questions[index]	
+%>
   <tr>
+    <td><%=h (10*page) + index + 1 %></td>
     <td><%=h question.text %></td>
     <td>
     	<%=h question.first_answer.text if question.answers.size > 0 %>
@@ -73,7 +82,7 @@
 <% end %>
 <% if !@questions.empty?%>
   <tr>
-  	<td colspan=4 style="text-align: center; border: 0px;">
+  	<td colspan=6 style="text-align: center; border: 0px;">
 		<%= will_paginate @questions %>
 	</td>
   </tr>

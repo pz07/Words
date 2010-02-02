@@ -91,8 +91,34 @@ class Question < ActiveRecord::Base
     stats.save!
   end
   
+  def next_level
+    Question.transaction do
+      n = self.level.next_level
+      if n == nil
+        self.active = false
+      else
+        self.level = n 
+        self.next_attempt_date = compute_next_attempt_date
+      end
+      
+      self.save!
+    end
+  end
+  
+  def prev_level
+    Question.transaction do
+      n = self.level.prev_level
+      if n != nil
+        self.level = n 
+        self.next_attempt_date = Time.now.tomorrow
+      end
+      
+      self.save!
+    end
+  end
+  
   def compute_next_attempt_date
-    2.hours.ago(self.last_attempt_date.advance(:days => self.level.day_interval)) 
+    2.hours.ago(Time.now.advance(:days => self.level.day_interval)) 
   end
   
   protected
