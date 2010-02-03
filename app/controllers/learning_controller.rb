@@ -81,6 +81,10 @@ class LearningController < ApplicationController
   def onlyRepetitions
    session[:attempt].onlyRepetitions
    redirect_to(:action => "correct")
+ end
+ 
+  def fonetic_keyboard
+    
   end
 
 end

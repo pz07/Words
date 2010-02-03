@@ -12,6 +12,10 @@
 		
 		//alert('mam przycisk: '+key);
 		
+		if(event.shiftKey || event.altKey || event.ctrlKey){
+			return;
+		}
+		
 		if(event.target.id == 'answer' && key == 13){
 			submitQuestion();
 		}
@@ -54,6 +58,12 @@
 		}	
 	}
 	
+	function addSymbole(symbole){
+		var answer = document.getElementById('answer');
+		if(answer){
+			answer.value = answer.value + symbole;
+		}
+	}
 </script>
 
 <%= render :partial => "lessons/lesson", :object => @attempt.lesson%>
@@ -95,7 +105,18 @@
 	</tr>
 	<tr>
 		<td>
-			<input type="button" value="Show question details" onclick="showQuestionDetails();"/>
+			<table>
+				<tr>
+					<td>
+						<input type="button" value="Show question details" onclick="showQuestionDetails();"/>			
+					</td>
+					<td>
+						<% form_remote_tag :url => {:action => 'fonetic_keyboard', :callback => "addSymbole"} do %>
+							<%= submit_tag "Fonetic keyboard", :id => 'foneticButton' %>
+						<% end -%>			
+					</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 </table>

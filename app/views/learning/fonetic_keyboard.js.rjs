@@ -1,0 +1,2 @@
+page.replace_html("foneticKeyboard", :partial => "fonetic_keyboard", :object => params[:callback])
+

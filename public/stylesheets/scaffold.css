@@ -136,3 +136,8 @@ div.title_small{
 	font-family: monospace;
 	font-size: 12pt;
 }
+
+div#kb input{
+	padding: 0px;
+	margin: 0px;
+}

@@ -1,8 +1,16 @@
+<script>
+	function addSymbole(symbole){
+		document.getElementById('answer_text').value = 
+			document.getElementById('answer_text').value + symbole;
+	}
+</script>
+
 <div class="title">New answer</div>
 <br>
 
 <div class="links">
-	<%= link_to 'Back', :controller => "questions", :action => "show", :id => @answer.question %>
+	<%= link_to_remote "Fonetic keyboard", :url => {:controller => "learning", :action => 'fonetic_keyboard', :callback => "addSymbole"}%> | 
+	<%= link_to 'Back', :controller => "questions", :action => "show", :id => @answer.question %> 
 </div>
 <br>
 

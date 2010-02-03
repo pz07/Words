@@ -1,7 +1,15 @@
+<script>
+	function addSymboleToAnswer(symbole){
+		document.getElementById('answer_text').value = 
+			document.getElementById('answer_text').value + symbole;
+	}
+</script>
+
 <div class="title">Add question</div>
 <br>
 
 <div class="links">
+	<%= link_to_remote "Fonetic keyboard", :url => {:controller => "learning", :action => 'fonetic_keyboard', :callback => "addSymboleToAnswer"}%> | 
 	<%= link_to 'Back', :controller => "lessons", :action => "show", :id => @question.lesson %>
 </div>
 <br>
@@ -17,12 +25,16 @@
 	</tr>
 	<tr>
 		<th>Question:</th>
-		<td><%= f.text_field :text, :size => 50 %></td>
+		<td>
+			<%= f.text_field :text, :size => 50 %>
+		</td>
 	</tr>
 	<% fields_for :answer do |answer| %>
 		<tr>
 			<th>Answer:</th>
-			<td><%= answer.text_field :text, :size => 50%></td>
+			<td>
+				<%= answer.text_field :text, :size => 50%>
+			</td>
 		</tr>
 	<% end %>
 	<tr>
@@ -33,4 +45,3 @@
 </table>
 
 <% end %>
-
