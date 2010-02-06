@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ciation<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
         <title>Words</title>
@@ -103,7 +103,7 @@
     </head>
     <body>
         <h2>Welcome to Words Application</h2>
-        <table cellpadding="10" style="width: 100%;">
+        <table cellpadding="10">
             <tr>
                 <td valign="top" style="width: 75%;">
                     <h3>Getting Started</h3>
@@ -113,12 +113,12 @@
                         </div>
                     </p>
                 </td>
-                <td valign="top" id="sidebar" style="width: 25%;">
+                <td valign="top" id="sidebar">
                 <h3>Files</h3>
                 <li>
                     <ul class="links">
                         <li>
-                            <!-- tu można dodać link -->
+                            <a href="files/english_pronunciation_in_use.pdf">English Pronouncition in Use</a>
                         </li>
                     </ul>
                 </li>
