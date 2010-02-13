@@ -1,5 +1,7 @@
 <script>
 	function addSymboleToAnswer(symbole){
+		document.getElementById('answer_text').focus();
+		
 		document.getElementById('answer_text').value = 
 			document.getElementById('answer_text').value + symbole;
 	}
