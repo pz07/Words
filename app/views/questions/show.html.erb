@@ -28,6 +28,14 @@
 		<td><%= @question.text%></td>
 	</tr>
 	<tr>
+		<th>Question tip:</th>
+		<td><%= @question.question_tip%></td>
+	</tr>
+	<tr>
+		<th>Answer tip:</th>
+		<td><%= @question.answer_tip%></td>
+	</tr>
+	<tr>
 		<th>Level:</th>
 		<td>
 			<span style="background-color: <%=@question.level.color%>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -46,10 +54,6 @@
 		<th>Active:</th>
 		<td><%= @question.active%></td>
 	</tr>
-	<tr>
-		<th>Active:</th>
-		<td><%= @question.active%></td>
-	</tr>
 </table>
 
 <br/><br/>
@@ -58,11 +62,13 @@
 	<tr>
 		<th>&nbsp;</th>
 		<th>Answer</th>
+		<th>Tip</th>
 	</tr>
 	<% @question.answers.each do |answer| %>
 		<tr>
 			<td><%= answer.priority%></td>
 			<td><%= answer.text%></td>
+			<td><%= answer.tip%></td>
 			<td><%=link_to 'Edit', edit_answer_path(answer) %></td>
 			<td><%= link_to 'Delete', answer, :confirm => 'Are you sure?', :method => :delete %></td>
 		</tr>

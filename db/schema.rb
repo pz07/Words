@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100124213918) do
+ActiveRecord::Schema.define(:version => 20100317190841) do
 
   create_table "answer", :force => true do |t|
     t.integer  "question_id",                :null => false
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20100124213918) do
     t.integer  "priority",    :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tip"
   end
 
   create_table "learning_schema", :force => true do |t|
@@ -52,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20100124213918) do
     t.datetime "last_attempt_date"
     t.boolean  "active",            :default => true,                  :null => false
     t.datetime "next_attempt_date", :default => '2010-01-20 18:32:52', :null => false
+    t.string   "question_tip"
+    t.string   "answer_tip"
   end
 
   create_table "question_level_stat", :force => true do |t|

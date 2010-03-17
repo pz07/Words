@@ -1,11 +1,45 @@
 <div id="msgDiv" style="color: red; font-size: 12pt;">Wrong: <%=@levenshteinPercent%>%</div>
 <div id="qDiv" style="padding-top: 20px; visibility: hidden;">
-	<div style="color: red; font-size: 16pt;">
-		<%= params[:answer]%>
-	</div>
-	<div style="color: green; font-size: 16pt;">
-		<%= wrong.first_answer.text%><br/><br/>
-	</div>
+	<table style="width: 100%;">
+		<tr>
+			<td style="color: red; font-size: 16pt;">
+				<%= params[:answer]%>		
+			</td>
+		</tr>
+		<tr>
+			<td style="color: green; font-size: 16pt;">
+				<% if wrong.answers.size <= 1 %>
+					<%= wrong.first_answer.text%>
+					<% if wrong.first_answer.tip %>
+						<span style="font-size: 12pt; color: grey;">&nbsp;<%= wrong.first_answer.tip%></span>
+					<%end%>
+				<% else %>
+					<table align="center" valign="bottom">
+						<% wrong.answers.each_with_index do |a, i| %>
+							<tr>
+								<td style="text-align: left;">
+									<%= i +1%>.
+								</td>
+								<td style="text-align: left; font-size: 21pt; padding-top: 10px;">
+									<%= a.text%>
+									<% if a.tip %>
+										<span style="font-size: 12pt; color: grey;">&nbsp;<%= a.tip%></span>
+									<%end%>
+								</td>
+							</tr>
+						<% end %>
+					</table>
+				<%end%>
+			</td>
+		</tr>
+		<% if wrong.answer_tip %>
+			<tr>
+				<td colspan="2" style="text-align: right; color: grey;">
+					<%= wrong.answer_tip %>
+				</td>
+			</tr>
+		<%end%>
+	</table>
 </div>
 <br>
 <br>

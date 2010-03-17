@@ -31,6 +31,18 @@
 			<%= f.text_field :text, :size => 50 %>
 		</td>
 	</tr>
+	<tr>
+		<th>Question tip:</th>
+		<td>
+			<%= f.text_field :question_tip, :size => 50 %>
+		</td>
+	</tr>
+	<tr>
+		<th>Answer tip:</th>
+		<td>
+			<%= f.text_field :answer_tip, :size => 50 %>
+		</td>
+	</tr>
 	<% fields_for :answer do |answer| %>
 		<tr>
 			<th>Answer:</th>
@@ -38,7 +50,14 @@
 				<%= answer.text_field :text, :size => 50%>
 			</td>
 		</tr>
+		<tr>
+			<th>Answer tip:</th>
+			<td>
+				<%= answer.text_field :tip, :size => 50%>
+			</td>
+		</tr>
 	<% end %>
+	
 	<tr>
 		<th colspan=2 style="text-align: center;">
 			<%= f.submit 'Save' %>			

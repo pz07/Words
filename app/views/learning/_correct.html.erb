@@ -2,6 +2,9 @@
 <div id="qDiv" style="color: green; font-size: 21pt; padding-top: 20px;">
 	<% if correct.answers.size <= 1 %>
 		<%= correct.first_answer.text%>
+		<% if correct.first_answer.tip %>
+			<span style="font-size: 12pt; color: grey;">&nbsp;<%= correct.first_answer.tip%></span>
+		<%end%>
 	<% else %>
 		<table align="center" valign="bottom">
 			<% correct.answers.each_with_index do |a, i| %>
@@ -11,6 +14,9 @@
 					</td>
 					<td style="text-align: left; font-size: 21pt; padding-top: 10px;">
 						<%= a.text%>
+						<% if a.tip %>
+							<span style="font-size: 12pt; color: grey;">&nbsp;<%= a.tip%></span>
+						<%end%>
 					</td>
 				</tr>
 			<% end %>

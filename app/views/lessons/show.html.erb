@@ -34,9 +34,6 @@
     	<%= link_to "Answer", :sort_column => "a.text", :sort_order => sort_order %>
 	</th>
     <th>
-    	<%= link_to "Last attempt", :sort_column => "last_attempt_date", :sort_order => sort_order %>
-	</th>
-    <th>
     	<%= link_to "Next attempt", :sort_column => "next_attempt_date", :sort_order => sort_order %>
 	</th>
     <th></th>
@@ -61,7 +58,6 @@
 			(and <%= (question.answers.size) -1%> more)
 		<%end%>
 	</td>
-    <td><nobr><%=h question.last_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr></td>
     <td>
     	<nobr><%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr>
 	</td>
