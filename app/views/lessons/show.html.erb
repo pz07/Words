@@ -1,3 +1,11 @@
+<%
+	sort_order = "ASC"
+	sort_order = "DESC" if params[:sort_order] == "ASC"
+
+	page = 0
+	page = params[:page].to_i if params[:page]
+%>
+
 <div class="title">Lesson details</div>
 <br>
 
@@ -12,15 +20,20 @@
 
 <%= render :partial => "lesson", :object => @lesson%>
 
-<br/><br/>
+<br/>
 
-<%
-	sort_order = "ASC"
-	sort_order = "DESC" if params[:sort_order] == "ASC"
-
-	page = 0
-	page = params[:page].to_i if params[:page]
-%>
+<% form_tag({:sort_column => "text", :sort_order => sort_order}, {:method => "GET"})  do %>
+	<table align="right">
+		<tr>
+			<td>
+				<%= text_field_tag "question_text", "#{params[:question_text]}" %>
+			</td>
+			<td>
+				<%= submit_tag "Filtruj" %>
+			</td>
+		</tr>
+	</table>
+<% end%>
 
 <table class="dblist" style="width: 100%;">
   <tr>

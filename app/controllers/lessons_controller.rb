@@ -12,6 +12,8 @@ class LessonsController < ApplicationController
 
   # GET /lesson/1
   # GET /lesson/1.xml
+  # POST /lesson/1
+  # POST /lesson/1.xml
   def show
     sort_order = "ASC"
     sort_order = params[:sort_order] if params[:sort_order] 
@@ -20,11 +22,15 @@ class LessonsController < ApplicationController
     sort_column = params[:sort_column] if params[:sort_column]
     
     out_sort = ", id DESC"
-    out_sort = ", next_attempt_date ASC " + out_sort unless sort_column.include? "next_attempt_date" 
+    out_sort = ", next_attempt_date ASC " + out_sort unless sort_column.include? "next_attempt_date"
     
     @lesson = Lesson.find(params[:id])
+    
+    filter = params[:question_text]
+    conditions = ["lesson_id = :id and question.text like :text", {:id => @lesson, :text => "%"+filter+"%"}]
+    
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
-                      :conditions => {:lesson_id => @lesson}, 
+                      :conditions => conditions, 
                       :order => "#{sort_column} #{sort_order} #{out_sort}",
                       :joins => "left join level l on \"question\".level_id = l.id left join answer a on \"question\".id = a.question_id and a.priority = 1"
     
