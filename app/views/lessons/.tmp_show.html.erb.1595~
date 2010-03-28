@@ -1,0 +1,99 @@
+<%
+	sort_order = "ASC"
+	sort_order = "DESC" if params[:sort_order] == "ASC"
+
+	page = 0
+	page = params[:page].to_i if params[:page]
+%>
+
+<div class="title">Lesson details</div>
+<br>
+
+<div class="links">
+	<%= link_to "Learn (#{@lesson.questions_to_learn.size} of #{@lesson.questions.size})", :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+	<%= link_to 'Delete', @lesson, :confirm => 'Are you sure?', :method => :delete %> |
+	<%= link_to 'Add question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>|
+	<%= link_to 'Back', lessons_path %>
+</div>
+<br>
+
+<%= render :partial => "lesson", :object => @lesson%>
+
+<br/>
+
+<% form_tag({:sort_column => "text", :sort_order => sort_order}, {:method => "GET"})  do %>
+	<table align="right">
+		<tr>
+			<td>
+				<%= text_field_tag "question_text", "#{params[:question_text]}" %>
+			</td>
+			<td>
+				<%= submit_tag "Filtruj" %>
+			</td>
+		</tr>
+	</table>
+<% end%>
+
+<table class="dblist" style="width: 100%;">
+  <tr>
+  	<th>
+  		L.p.
+	</th>	
+    <th>
+    	<%= link_to "Question", :sort_column => "text", :sort_order => sort_order %>
+	</th>
+    <th>
+    	<%= link_to "Answer", :sort_column => "a.text", :sort_order => sort_order %>
+	</th>
+    <th>
+    	<%= link_to "Next attempt", :sort_column => "next_attempt_date", :sort_order => sort_order %>
+	</th>
+    <th></th>
+    <th>
+    	<%= link_to "Level", :sort_column => "l.level", :sort_order => sort_order %>
+	</th>
+  </tr>
+<% if @questions.empty?%>
+	<tr>
+		<td colspan=4>No questions yet.</td>
+	</tr>
+<%end%>
+<% @questions.each_index do |index| 
+		question = @questions[index]	
+%>
+  <tr>
+    <td><%=h (10*page) + index + 1 %></td>
+    <td><%=h question.text %></td>
+    <td>
+    	<%=h question.first_answer.text if question.answers.size > 0 %>
+		<% if question.answers.size > 1%>
+			(and <%= (question.answers.size) -1%> more)
+		<%end%>
+	</td>
+    <td>
+    	<nobr><%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr>
+	</td>
+	<% if question.next_attempt_date <= Time.now%>
+		<td style='background-color: #AEFFB3;'>
+			now!	
+		</td>
+	<% else%>
+		<td>
+			<%= distance_of_time_in_words_to_now(question.next_attempt_date)%>
+		</td>
+	<% end%>
+    <td style="background-color: <%=h question.level.color -%>; color: grey;">
+    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
+	</td>
+	<td><%= link_to 'Show', question %></td>
+  </tr>
+<% end %>
+<% if !@questions.empty?%>
+  <tr>
+  	<td colspan=6 style="text-align: center; border: 0px;">
+		<%= will_paginate @questions %>
+	</td>
+  </tr>
+<%end%>
+</table>

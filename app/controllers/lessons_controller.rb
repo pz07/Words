@@ -26,7 +26,7 @@ class LessonsController < ApplicationController
     
     @lesson = Lesson.find(params[:id])
     
-    filter = params[:question_text]
+    filter = (params[:question_text] ? params[:question_text] : "") 
     conditions = ["lesson_id = :id and question.text like :text", {:id => @lesson, :text => "%"+filter+"%"}]
     
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
