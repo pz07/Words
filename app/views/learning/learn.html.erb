@@ -41,10 +41,17 @@
 	
 	function showWaitDiv(){
 		Element.show('waitDiv');
+		Element.hide('errorDiv');
+	}
+	
+	function showErrorDiv(){
+		Element.show('errorDiv');
+		Element.hide('waitDiv');
 	}
 	
 	function hideWaitDiv(){
 		Element.hide('waitDiv');
+		Element.hide('errorDiv');
 	}
 	
 	function submitQuestion(){
@@ -94,6 +101,11 @@
 	<tr>
 		<td id="waitDiv" style="display: none;">
 			Please wait...
+		</td>
+	</tr>
+	<tr>
+		<td id="errorDiv" style="display: none; color: red;">
+			Server connection error:( Try again...
 		</td>
 	</tr>
 	<tr style="height: 100%; vertical-align: center;">
