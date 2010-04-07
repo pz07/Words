@@ -39,7 +39,31 @@
 		shorts[key] = buttonId;
 	}
 	
-	function showWaitDiv(){
+	function callInProgress (xmlhttp) {
+		switch (xmlhttp.readyState) {
+			case 1: case 2: case 3:
+				return true;
+				break;
+			// Case 4 and 0
+			default:
+				return false;
+				break;
+		}
+	}
+	
+	function setRequestTimeout(request){
+		request['timeoutId'] = window.setTimeout(
+					function() {
+						if (callInProgress(request.transport)) {
+							request.transport.abort();
+							showErrorDiv();
+						}
+					},
+					5000
+				);
+	}
+	
+	function showWaitDiv(request){
 		Element.show('waitDiv');
 		Element.hide('errorDiv');
 	}

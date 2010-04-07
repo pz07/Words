@@ -18,7 +18,8 @@
 
 <br>
 <br>
-<% form_remote_tag(:url => {:action => 'check'}, :before => "showWaitDiv();", 
+<% form_remote_tag(:url => {:action => 'check'}, :before => "showWaitDiv();",
+						:loading => "setRequestTimeout(request);" ,
 						:success => "hideWaitDiv();", 
 						:failure => "showErrorDiv();") do %>
 	<%= hidden_field_tag :question_id, question.id%>

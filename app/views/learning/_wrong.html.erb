@@ -47,6 +47,7 @@
 	<tr>
 		<td>
 			<% form_remote_tag :url => {:action => 'wrong'}, :before => "showWaitDiv();", 
+											:loading => "setRequestTimeout(request);" ,
 											:success => "hideWaitDiv();", 
 											:failure => "showErrorDiv();" do %>
 				<%= submit_tag "Again [Enter]", :id => "againButton" %>
@@ -54,6 +55,7 @@
 		</td>
 		<td>
 			<% form_remote_tag :url => {:action => 'skip'}, :before => "showWaitDiv();", 
+											:loading => "setRequestTimeout(request);" ,
 											:success => "hideWaitDiv();", 
 											:failure => "showErrorDiv();" do %>
 				<%= submit_tag "Skip [s]", :id => "skipButton" %>
@@ -61,6 +63,7 @@
 		</td>
 		<td>
 			<% form_remote_tag :url => {:action => 'correct'}, :before => "showWaitDiv();", 
+											:loading => "setRequestTimeout(request);" ,
 											:success => "hideWaitDiv();",
 											:failure => "showErrorDiv();" do %>
 				<%= submit_tag "I know [c]", :id => "correctButton" %>
