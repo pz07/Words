@@ -75,6 +75,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'mislav-will_paginate' , :version => '~> 2.3.2' ,
       :lib => 'will_paginate' , :source => 'http://gems.github.com'
+  config.gem "authlogic" , :version => '~> 2.1.3'
 end
 
 ActiveRecord::Base.pluralize_table_names = false

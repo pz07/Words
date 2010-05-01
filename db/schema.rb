@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100317190841) do
+ActiveRecord::Schema.define(:version => 20100501225247) do
 
   create_table "answer", :force => true do |t|
     t.integer  "question_id",                :null => false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20100317190841) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "learning_schema_id"
+    t.integer  "user_id",            :null => false
   end
 
   create_table "level", :force => true do |t|
@@ -77,5 +78,23 @@ ActiveRecord::Schema.define(:version => 20100317190841) do
 
   add_index "session", ["session_id"], :name => "index_session_on_session_id"
   add_index "session", ["updated_at"], :name => "index_session_on_updated_at"
+
+  create_table "user", :force => true do |t|
+    t.string   "email",                                 :null => false
+    t.string   "crypted_password",                      :null => false
+    t.string   "password_salt",                         :null => false
+    t.string   "persistence_token",                     :null => false
+    t.string   "perishable_token",                      :null => false
+    t.integer  "login_count",        :default => 0,     :null => false
+    t.integer  "failed_login_count", :default => 0,     :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.boolean  "admin",              :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

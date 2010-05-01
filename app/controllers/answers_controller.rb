@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_filter :require_user
   
   # GET /answer/new
   # GET /answer/new.xml

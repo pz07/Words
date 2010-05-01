@@ -1,0 +1,39 @@
+<div class="title">Account details</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Edit', edit_account_path %>
+</div>
+<br>
+
+<table class="dbdetails">
+	<tr>
+		<th>Email:</th>
+		<td><%=h @user.email %></td>
+	</tr>
+	<tr>
+		<th>Login count:</th>
+		<td><%=h @user.login_count %></td>
+	</tr>
+	<tr>
+		<th>Last request at:</th>
+		<td><%=h @user.last_request_at.strftime('%d-%m-%Y %H:%M') if @user.last_request_at  %></td>
+	</tr>
+	<tr>
+		<th>Last login at:</th>
+		<td><%=h @user.last_login_at.strftime('%d-%m-%Y %H:%M') if @user.last_login_at %></td>
+	</tr>
+	<tr>
+		<th>Current login at:</th>
+		<td><%=h @user.current_login_at.strftime('%d-%m-%Y %H:%M') if @user.current_login_at %></td>
+	</tr>
+	<tr>
+		<th>Last login ip:</th>
+		<td><%=h @user.last_login_ip %></td>
+	</tr>
+	<tr>
+		<th>Current login ip:</th>
+		<td><%=h @user.current_login_ip %></td>
+	</tr>
+</table>
+

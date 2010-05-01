@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_filter :require_user
 
   # GET /question/1
   # GET /question/1.xml

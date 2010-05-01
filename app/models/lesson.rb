@@ -2,10 +2,11 @@ class Lesson < ActiveRecord::Base
 
   #zależności
   has_many :questions, :dependent => :destroy
+  belongs_to :user
   belongs_to :learning_schema
   
   #walidacja
-  validates_presence_of :name, :learning_schema
+  validates_presence_of :name, :learning_schema, :user
   validates_uniqueness_of :name
   
   def questions_to_learn

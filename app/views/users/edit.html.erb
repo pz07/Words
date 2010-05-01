@@ -1,0 +1,35 @@
+<div class="title">Editing account</div>
+<br>
+
+<div class="links">
+	<%= link_to 'Back', account_path %>
+</div>
+<br>
+
+<% form_for @user, :url => account_path do |f| %>
+	<table class="form">
+		<tr>
+			<td colspan=2>
+				<%= f.error_messages %>			
+			</td>
+		</tr>
+		<tr>
+			<th><%= f.label :email %></th>
+			<td><%= f.text_field :email %></td>
+		</tr>
+		<tr>
+			<th><%= f.label :password, f.object.new_record? ? nil : "Change password" %></th>
+			<td><%= f.password_field :password %></td>
+		</tr>
+		<tr>
+			<th><%= f.label :password_confirmation %></th>
+			<td><%= f.password_field :password_confirmation %><br /></td>
+		</tr>
+		<tr>
+			<th colspan=2 style="text-align: center;">
+				<%= f.submit "Update" %>			
+			</th>
+		</tr>
+	</table>
+<% end %>
+

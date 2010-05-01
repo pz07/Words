@@ -1,8 +1,10 @@
 class LessonsController < ApplicationController
+  before_filter :require_user
+  
   # GET /lesson
   # GET /lesson.xml
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.find_all_by_user_id(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +46,7 @@ class LessonsController < ApplicationController
   # GET /lesson/new.xml
   def new
     @lesson = Lesson.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @lesson }
@@ -60,6 +62,8 @@ class LessonsController < ApplicationController
   # POST /lesson.xml
   def create
     @lesson = Lesson.new(params[:lesson])
+    
+    @lesson.user = current_user 
 
     respond_to do |format|
       if @lesson.save

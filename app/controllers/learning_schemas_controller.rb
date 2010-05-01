@@ -1,4 +1,6 @@
 class LearningSchemasController < ApplicationController
+  before_filter :require_user
+
   # GET /learning_schema
   # GET /learning_schema.xml
   def index

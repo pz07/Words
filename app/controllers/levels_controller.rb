@@ -1,4 +1,6 @@
 class LevelsController < ApplicationController
+  before_filter :require_user
+
   # GET /level
   # GET /level.xml
   def index
