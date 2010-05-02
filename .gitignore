@@ -1,4 +1,5 @@
 *.log
 .loadpath
 .project
+*.tmp*
 

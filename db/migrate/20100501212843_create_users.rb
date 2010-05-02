@@ -22,6 +22,6 @@ class CreateUsers < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :user
+    drop_table :user if table_exists? :user
   end
 end
