@@ -12,3 +12,10 @@
 You have <%= link_to @to_learn, :action => "learn" %> words to learn in <%= @in_lessons %> <%= link_to 'lessons', :controller => 'lessons'%>.
 <br/>
 There's <%= link_to @to_repeat, :action => "learn", :repetition => true %> words to repeat today.
+
+<br/>
+<br/>
+<br/>
+To learn tomorrow: <%= @to_learn_in_1_day%> words.<br/>
+To learn in 2 days: <%= @to_learn_in_2_day%> words.<br/>
+To learn in 3 days: <%= @to_learn_in_2_day%> words.

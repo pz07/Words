@@ -15,6 +15,23 @@ class LearningController < ApplicationController
                                                     Time.now.utc.tomorrow.at_beginning_of_day, current_user.id, true ],
                                      :include => [:lesson])
     
+    #TODO optimalization
+    @to_learn_in_1_day = Question.count(:conditions => ['next_attempt_date < ? and next_attempt_date >= ? and lesson.user_id = ? and lesson.active = ?', 
+                                                    Time.now.utc.advance(:days => 2).at_beginning_of_day, 
+                                                    Time.now.utc.advance(:days => 1).at_beginning_of_day,
+                                                    current_user.id, true ],
+                                        :include => [:lesson])
+    @to_learn_in_2_day = Question.count(:conditions => ['next_attempt_date < ? and next_attempt_date >= ? and lesson.user_id = ? and lesson.active = ?', 
+                                                    Time.now.utc.advance(:days => 3).at_beginning_of_day, 
+                                                    Time.now.utc.advance(:days => 2).at_beginning_of_day,
+                                                    current_user.id, true ],
+                                        :include => [:lesson])
+    @to_learn_in_3_day = Question.count(:conditions => ['next_attempt_date < ? and next_attempt_date >= ? and lesson.user_id = ? and lesson.active = ?', 
+                                                    Time.now.utc.advance(:days => 4).at_beginning_of_day, 
+                                                    Time.now.utc.advance(:days => 3).at_beginning_of_day,
+                                                    current_user.id, true ],
+                                        :include => [:lesson])
+    
     @to_repeat = Repetition.count(:conditions => ['user_id = ?', current_user.id ])
     
     render :layout => "application"

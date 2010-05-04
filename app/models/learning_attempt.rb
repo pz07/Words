@@ -37,7 +37,7 @@ class LearningAttempt
        end
     end
     
-    to_randimize.uniq!
+    to_randomize.uniq!
     
     randomized = []
     randomized << to_randomize.slice!(rand(to_randomize.size)) until to_randomize.size.eql?(0)

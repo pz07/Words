@@ -76,13 +76,13 @@
     <td>
     	<nobr><%=h question.next_attempt_date.strftime('%d-%m-%Y %H:%M') %></nobr>
 	</td>
-	<% if question.next_attempt_date <= Time.now%>
+	<% if question.next_attempt_date.at_beginning_of_day <= Time.now%>
 		<td style='background-color: #AEFFB3;'>
 			now!	
 		</td>
 	<% else%>
 		<td>
-			<%= distance_of_time_in_words_to_now(question.next_attempt_date)%>
+			<%= distance_of_time_in_words_to_now(question.next_attempt_date.tomorrow.at_beginning_of_day)%>
 		</td>
 	<% end%>
     <td>
