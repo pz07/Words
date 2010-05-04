@@ -2,23 +2,47 @@ class LearningAttempt
   
   attr_reader :lesson
   
+  attr_reader :repetition
+  
   attr_reader :questions_to_learn
-  attr_reader :questions_to_repeat
-  attr_reader :questions_passed
   
   attr_reader :current
   
-  def initialize(lesson)
-    @lesson = lesson
+  def initialize(user, repetition, lesson_id)
+    if lesson_id then
+      @lesson = Lesson.find(lesson_id);
+    end
     
-    to_randomize = @lesson.questions_to_learn_ids.dup
+    @repetition = repetition
+    
+    to_randomize = nil
+    if @repetition then
+       if @lesson then
+         to_randomize = Repetition.find_all_by_lesson_id_and_user_id(@lesson, user).collect do |r|
+              r.question_id
+         end
+       else
+         to_randomize = Repetition.find_all_by_user_id(user).collect do |r|
+           r.question_id
+         end
+       end
+    else  
+       if @lesson then
+         to_randomize = @lesson.questions_to_learn_ids.dup 
+       else
+         to_randomize = Question.find(:all, :include => [:lesson], 
+                                  :conditions => ["next_attempt_date < ? and lesson.user_id = ? and lesson.active = ?", Time.now.utc.tomorrow.at_beginning_of_day, user, true]).collect do |q|
+            q.id
+         end
+       end
+    end
+    
+    to_randimize.uniq!
+    
     randomized = []
-    
     randomized << to_randomize.slice!(rand(to_randomize.size)) until to_randomize.size.eql?(0)
     
     @questions_to_learn = randomized
-    @questions_to_repeat = []
-    @questions_passed = []
     
     if @questions_to_learn.size > 0
       @current = @questions_to_learn[0]
@@ -30,78 +54,43 @@ class LearningAttempt
     @just_repeated = []
   end
   
-  def correct
+  def mark note
     deleted = nil
     
     i = self.questions_to_learn.index self.current
     if i
       deleted = self.questions_to_learn.delete_at i
+    end
+    
+    if note >= 4 then
+      @just_passed << self.current
     else
-      i = self.questions_to_repeat.index self.current
-      if i
-        deleted = self.questions_to_repeat.delete_at i
-      end
+      @just_repeated << self.current
+    end
+    
+    if @repetition and note < 4 then
+      self.questions_to_learn << deleted
     end
 
-    if @repeated
-      @just_repeated << self.current
-      deleted = nil
-    else
-       @just_passed << self.current
-       self.questions_passed << self.current
-    end
-     
-    @repeated = nil
-    
     self.next_question
     
     return deleted
   end
  
-  def wrong
-    if self.questions_to_repeat.last != self.current
-      self.questions_to_repeat << self.current
-      @repeated = self.current
-    end
- end
-
- def skip
-    skipped = self.questions_to_learn.delete self.current
-    if skipped
-      self.questions_to_repeat << skipped
-      @just_repeated << skipped
-    end
-
-    skipped = self.questions_to_repeat.delete self.current
-    if skipped
-      self.questions_to_repeat << skipped
-    end
-
-    @repeated = nil
-    self.next_question
- end
- 
- def onlyRepetitions
-   @just_passed = self.questions_to_learn
-   @questions_to_learn = []
- end
-
- def get_changes
+  def get_changes
    changes = {:mark_repeat => @just_repeated.dup, :mark_correct => @just_passed.dup}
    
    @just_repeated = []
    @just_passed = []
    
    return changes
- end
+  end
  
  protected 
  
    def next_question
      if self.questions_to_learn.size > 0
        @current = self.questions_to_learn[0]
-     elsif self.questions_to_repeat.size > 0 
-       @current = self.questions_to_repeat[0]
      else
        @current = nil
      end

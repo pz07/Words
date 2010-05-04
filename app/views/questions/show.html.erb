@@ -37,9 +37,14 @@
 	</tr>
 	<tr>
 		<th>Level:</th>
-		<td>
-			<span style="background-color: <%=@question.level.color%>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-			<%= @question.level.level%>/<%= @question.lesson.learning_schema.last_level.level%>
+		<td class="right">
+			<%= @question.iteration%>
+		</td>
+	</tr>
+	<tr>
+		<th>E-factor:</th>
+		<td class="right">
+			<%= @question.e_factor%>
 		</td>
 	</tr>
 	<tr>
@@ -82,16 +87,26 @@
 		<th>Level</th>
 		<th>Start</th>
 		<th>Finished</th>
-		<th>Correct</th>
-		<th>Wrong</th>
+		<th>Interval</th>
+		<th>0</th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
 	</tr>
-	<% @question.question_level_stats.each do |s| %>
+	<% @question.iterations.each do |i| %>
 		<tr>
-			<td style="background-color: <%= s.level.color%>"><%= s.level.level%></td>
-			<td><%=h s.learning_begin.strftime('%d-%m-%Y %H:%M') if s.learning_begin%></td>
-			<td><%=h s.learning_finished.strftime('%d-%m-%Y %H:%M') if s.learning_finished%></td>
-			<td class="right"><%=h s.correct_answers%></td>
-			<td class="right"><%=h s.wrong_answers%></td>
+			<td><%= i.iteration%></td>
+			<td><%=h i.learning_begin.strftime('%d-%m-%Y %H:%M') if i.learning_begin%></td>
+			<td><%=h i.learning_finished.strftime('%d-%m-%Y %H:%M') if i.learning_finished%></td>
+			<td class="right"><%=h i.day_interval%></td>
+			<td class="right"><%=h i.answers_0 %></td>
+			<td class="right"><%=h i.answers_1 %></td>
+			<td class="right"><%=h i.answers_2 %></td>
+			<td class="right"><%=h i.answers_3 %></td>
+			<td class="right"><%=h i.answers_4 %></td>
+			<td class="right"><%=h i.answers_5 %></td>
 		</tr>
 	<%end%>	
 </table>

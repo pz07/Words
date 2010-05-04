@@ -26,10 +26,23 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     
+    @iteration = Iteration.new
+    @iteration.question = @question
+    @iteration.iteration = 1
+    @iteration.day_interval = 1
+    @iteration.learning_begin = Time.now
+    @iteration.answers_0 = 0
+    @iteration.answers_1 = 0
+    @iteration.answers_2 = 0
+    @iteration.answers_3 = 0
+    @iteration.answers_4 = 0
+    @iteration.answers_5 = 0
+    
     @question.lesson = Lesson.find(params[:lesson_id])
-    @question.level = @question.lesson.learning_schema.start_level
+    @question.e_factor = 2.5
+    @question.iteration = @iteration.iteration
     @question.last_attempt_date = Time.now
-    @question.next_attempt_date = Time.now
+    @question.next_attempt_date = Time.now.advance(:days => @iteration.day_interval)
     
     @answer = Answer.new(params[:answer])
     @answer.priority = 1
@@ -39,8 +52,12 @@ class QuestionsController < ApplicationController
       @question.answers << @answer
       if @question.valid?
         Question.transaction do
+          @question.iterations << @iteration
+          
           @question.save
           @answer.save
+          
+          Repetition.create(:user => current_user, :question => @question, :day => Time.now.at_beginning_of_day).save
           
           @question.lesson.reload
           

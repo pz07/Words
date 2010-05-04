@@ -12,7 +12,7 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: words_dev
+  database: words_heroku_backup
   pool: 5
   username: postgres
   password: postgres

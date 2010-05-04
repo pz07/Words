@@ -99,12 +99,26 @@
 	}
 </script>
 
-<%= render :partial => "lessons/lesson", :object => @attempt.lesson%>
+<style>
+	a { color: grey; font-weight: bold;}
+	a:visited { color: grey; font-weight: bold;}
+	a:hover { color: grey; 	font-weight: bold;}
+</style>
+
+<% if @attempt.lesson %>
+	<%= render :partial => "lessons/lesson", :object => @attempt.lesson%>
+<%end%>
 
 <br/>
 
 <div class="links">
+  <%= link_to 'Start', :controller => 'learning', :action => "info"%>
+  &nbsp;|&nbsp;
+  <%= link_to 'Lessons', :controller => 'lessons' %>
+  <% if @attempt.lesson %>
+	&nbsp;|&nbsp;
 	<%= link_to 'Lesson details', :controller => 'lessons', :action => "show", :id => @attempt.lesson %>
+  <% end %>
 </div>
 
 <br>

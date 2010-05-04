@@ -31,11 +31,7 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  private
-    def get_layout
-      params[:popup] == 'true' ? "popup" : "application"
-    end
-  
+  protected
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
@@ -44,6 +40,15 @@ class ApplicationController < ActionController::Base
     def current_user
       return @current_user if defined?(@current_user)
       @current_user = current_user_session && current_user_session.user
+    end
+    
+    def object_to_boolean(value)
+      return [true, "true", 1, "1", "T", "t"].include?(value.class == String ? value.downcase : value)
+    end
+  
+  private
+    def get_layout
+      params[:popup] == 'true' ? "popup" : "application"
     end
   
     def require_user

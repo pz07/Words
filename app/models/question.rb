@@ -2,29 +2,17 @@ class Question < ActiveRecord::Base
   
   #zależności
   belongs_to :lesson
-  belongs_to :level
   
   has_many :answers, :dependent => :destroy, :order => "priority ASC"
-  has_many :question_level_stats, :dependent => :destroy, :order => "created_at ASC"
+  has_many :iterations, :dependent => :destroy, :order => "created_at ASC"
   has_one :first_answer,
           :class_name => 'Answer' ,
           :order  => 'priority ASC'
           
   #walidacja
-  validates_presence_of :text, :lesson, :level, :last_attempt_date
+  validates_presence_of :text, :lesson, :last_attempt_date
   validates_inclusion_of :active, :in => [true, false] 
   validate :must_have_at_least_one_answer
-  
-  def before_save
-    if !self.id or !QuestionLevelStat.find_by_question_id_and_level_id(self.id, self.level.id)
-      self.question_level_stats << QuestionLevelStat.new(:question => self, :level => self.level, 
-                    :learning_begin => Time.now, :correct_answers => 0, :wrong_answers => 0)
-    end
-  end
-  
-  def current_level_stats
-    QuestionLevelStat.find(:first, :conditions => ["level_id = ? and question_id = ?", self.level.id, self.id])
-  end
   
   def correct? answer
     answer.strip! if answer
@@ -63,62 +51,77 @@ class Question < ActiveRecord::Base
     end
   end
   
-  def correct_answer
+  def check note
     Question.transaction do
-      stats = self.current_level_stats
-      stats.correct_answers = stats.correct_answers.next
-      stats.learning_finished = Time.now
+      ci = self.current_iteration
       
-      stats.save!
+      if note == 0 then
+        ci.answers_0 = (ci.answers_0+1)
+      elsif note == 1 then
+        ci.answers_1 = (ci.answers_1+1)
+      elsif note == 2 then
+        ci.answers_2 = (ci.answers_2+1)
+      elsif note == 3 then
+        ci.answers_3 = (ci.answers_3+1)
+      elsif note == 4 then
+        ci.answers_4 = (ci.answers_4+1)
+      elsif note == 5 then
+        ci.answers_5 = (ci.answers_5+1)
+      end
       
-      n = self.level.next_level
-      if n == nil
-        self.active = false
+      ci.save!
+      
+      if note < 3 then
+        self.iteration = 1
+        self.next_attempt_date = Time.now.advance(:days => self.current_iteration.day_interval)
       else
-        self.level = n 
-        self.last_attempt_date = Time.now
-        self.next_attempt_date = compute_next_attempt_date
+        #EF+(0.1-(5-q)*(0.08+(5-q)*0.02))
+        self.e_factor = self.e_factor + (0.1 - (5-note)*(0.08 + (5 - note)*0.02))
+      
+        if self.e_factor < 1.3
+          self.e_factor = 1.3
+        end
+      
+        ni = self.next_iteration
+        self.iteration = ni.iteration
+        
+        if ni.iteration == 2
+          ni.day_interval = 4
+        else
+          ni.day_interval = (self.e_factor * ci.day_interval).floor  
+        end
+        
+        ni.save!
+        
+        self.next_attempt_date = Time.now.advance(:days => ni.day_interval)
       end
       
       self.save!
     end
   end
   
-  def wrong_answer
-    stats = self.current_level_stats
-    stats.wrong_answers = stats.wrong_answers.next
+  def current_iteration
+    Iteration.find_by_question_id_and_iteration(self.id, self.iteration)
+  end
+  
+  def next_iteration
+    n = Iteration.find_by_question_id_and_iteration(self.id, (self.iteration+1))
+    if !n then
+      n = Iteration.new
+      n.question = self
+      n.iteration= (self.iteration+1)
+      n.learning_begin = Time.now
+      n.answers_0 = 0
+      n.answers_1 = 0
+      n.answers_2 = 0
+      n.answers_3 = 0
+      n.answers_4 = 0
+      n.answers_5 = 0
+      
+      n.save!
+    end
     
-    stats.save!
-  end
-  
-  def next_level
-    Question.transaction do
-      n = self.level.next_level
-      if n == nil
-        self.active = false
-      else
-        self.level = n 
-        self.next_attempt_date = compute_next_attempt_date
-      end
-      
-      self.save!
-    end
-  end
-  
-  def prev_level
-    Question.transaction do
-      n = self.level.prev_level
-      if n != nil
-        self.level = n 
-        self.next_attempt_date = Time.now.tomorrow
-      end
-      
-      self.save!
-    end
-  end
-  
-  def compute_next_attempt_date
-    2.hours.ago(Time.now.advance(:days => self.level.day_interval)) 
+    return n
   end
   
   protected

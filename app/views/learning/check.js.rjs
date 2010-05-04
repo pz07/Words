@@ -1,0 +1,10 @@
+page.replace_html("question", :partial => "check", :object => @question)
+
+page << "clearShorts()"
+page << "addShort(48, 'mark0Button')"
+page << "addShort(49, 'mark1Button')"
+page << "addShort(50, 'mark2Button')"
+page << "addShort(51, 'mark3Button')"
+page << "addShort(52, 'mark4Button')"
+page << "addShort(53, 'mark5Button')"
+

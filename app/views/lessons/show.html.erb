@@ -10,7 +10,9 @@
 <br>
 
 <div class="links">
-	<%= link_to "Learn (#{@lesson.questions_to_learn.size} of #{@lesson.questions.size})", :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%if @lesson.active then%>
+		<%= link_to "Learn (#{@lesson.questions_to_learn.size} of #{@lesson.questions.size})", :controller => 'learning', :action => "learn", :lesson_id => @lesson %>|
+	<%end%>
 	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 	<%= link_to 'Delete', @lesson, :confirm => 'Are you sure?', :method => :delete %> |
 	<%= link_to 'Add question', :controller => 'questions', :action => "new", :lesson_id => @lesson %>|
@@ -56,7 +58,7 @@
   </tr>
 <% if @questions.empty?%>
 	<tr>
-		<td colspan=4>No questions yet.</td>
+		<td colspan=6>No questions yet.</td>
 	</tr>
 <%end%>
 <% @questions.each_index do |index| 
@@ -83,8 +85,8 @@
 			<%= distance_of_time_in_words_to_now(question.next_attempt_date)%>
 		</td>
 	<% end%>
-    <td style="background-color: <%=h question.level.color -%>; color: grey;">
-    	<%=h question.level.level-%>/<%=h (@lesson.learning_schema.levels.size - 1) -%>
+    <td>
+    	<%=h question.iteration-%>
 	</td>
 	<td><%= link_to 'Show', question %></td>
   </tr>

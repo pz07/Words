@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100502014240) do
+ActiveRecord::Schema.define(:version => 20100504092929) do
 
   create_table "answer", :force => true do |t|
     t.integer  "question_id",                :null => false
@@ -20,20 +20,18 @@ ActiveRecord::Schema.define(:version => 20100502014240) do
     t.string   "tip"
   end
 
-  create_table "app_user", :force => true do |t|
-    t.string   "email",                                 :null => false
-    t.string   "crypted_password",                      :null => false
-    t.string   "password_salt",                         :null => false
-    t.string   "persistence_token",                     :null => false
-    t.string   "perishable_token",                      :null => false
-    t.integer  "login_count",        :default => 0,     :null => false
-    t.integer  "failed_login_count", :default => 0,     :null => false
-    t.datetime "last_request_at"
-    t.datetime "current_login_at"
-    t.datetime "last_login_at"
-    t.string   "current_login_ip"
-    t.string   "last_login_ip"
-    t.boolean  "admin",              :default => false, :null => false
+  create_table "iteration", :force => true do |t|
+    t.integer  "question_id",                      :null => false
+    t.integer  "iteration",                        :null => false
+    t.float    "day_interval"
+    t.datetime "learning_begin",                   :null => false
+    t.datetime "learning_finished"
+    t.integer  "answers_0",         :default => 0, :null => false
+    t.integer  "answers_1",         :default => 0, :null => false
+    t.integer  "answers_2",         :default => 0, :null => false
+    t.integer  "answers_3",         :default => 0, :null => false
+    t.integer  "answers_4",         :default => 0, :null => false
+    t.integer  "answers_5",         :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,12 +44,12 @@ ActiveRecord::Schema.define(:version => 20100502014240) do
   end
 
   create_table "lesson", :force => true do |t|
-    t.string   "name",               :null => false
+    t.string   "name",                          :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "learning_schema_id"
-    t.integer  "user_id",            :null => false
+    t.integer  "user_id",                       :null => false
+    t.boolean  "active",      :default => true, :null => false
   end
 
   create_table "level", :force => true do |t|
@@ -68,12 +66,13 @@ ActiveRecord::Schema.define(:version => 20100502014240) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "level_id"
     t.datetime "last_attempt_date"
     t.boolean  "active",            :default => true,                  :null => false
-    t.datetime "next_attempt_date", :default => '2010-01-20 18:32:52', :null => false
+    t.datetime "next_attempt_date", :default => '2010-01-20 14:19:48', :null => false
     t.string   "question_tip"
     t.string   "answer_tip"
+    t.float    "e_factor",          :default => 2.5,                   :null => false
+    t.integer  "iteration",         :default => 1,                     :null => false
   end
 
   create_table "question_level_stat", :force => true do |t|
@@ -87,6 +86,14 @@ ActiveRecord::Schema.define(:version => 20100502014240) do
     t.datetime "updated_at"
   end
 
+  create_table "repetition", :force => true do |t|
+    t.integer  "question_id", :null => false
+    t.integer  "user_id",     :null => false
+    t.datetime "day",         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "session", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -96,6 +103,24 @@ ActiveRecord::Schema.define(:version => 20100502014240) do
 
   add_index "session", ["session_id"], :name => "index_session_on_session_id"
   add_index "session", ["updated_at"], :name => "index_session_on_updated_at"
+
+  create_table "user", :force => true do |t|
+    t.string   "email",                                 :null => false
+    t.string   "crypted_password",                      :null => false
+    t.string   "password_salt",                         :null => false
+    t.string   "persistence_token",                     :null => false
+    t.string   "perishable_token",                      :null => false
+    t.integer  "login_count",        :default => 0,     :null => false
+    t.integer  "failed_login_count", :default => 0,     :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.boolean  "admin",              :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :null => false

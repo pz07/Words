@@ -5,10 +5,27 @@ class LearningController < ApplicationController
     redirect_to :action => 'learn'
   end
   
+  def info
+    @repetitions = Repetition.find_by_user_id current_user.id
+    @to_learn = Question.count(:conditions => ['next_attempt_date < ? and lesson.user_id = ? and lesson.active = ?', 
+                                                    Time.now.utc.tomorrow.at_beginning_of_day, current_user.id, true ],
+                                    :include => [:lesson])
+    @in_lessons = Question.count(:select => 'lesson_id', :distinct => true, 
+                                     :conditions => ['next_attempt_date < ? and lesson.user_id = ? and lesson.active = ?', 
+                                                    Time.now.utc.tomorrow.at_beginning_of_day, current_user.id, true ],
+                                     :include => [:lesson])
+    
+    @to_repeat = Repetition.count(:conditions => ['user_id = ?', current_user.id ])
+    
+    render :layout => "application"
+  end
+  
   # GET /learning/learn
   def learn
-    lesson = Lesson.find(params[:lesson_id])
-    @attempt = LearningAttempt.new(lesson)
+    repetition = false;
+    repetition = params[:repetition] if params[:repetition]
+    
+    @attempt = LearningAttempt.new(current_user, repetition, params[:lesson_id])
     
     session[:attempt] = @attempt
   end
@@ -22,6 +39,7 @@ class LearningController < ApplicationController
     
     qId = @attempt.current;
     if !qId
+      @to_repeat = Repetition.count(:conditions => ['user_id = ?', current_user.id ]) 
       respond_to do |format|
         format.js {render :action => 'end_of_lesson'}
       end      
@@ -40,52 +58,39 @@ class LearningController < ApplicationController
     
     @answer = params[:answer]
     @levenshteinPercent = @question.correct(@answer) 
-    if @levenshteinPercent == 100
-      respond_to do |format|
-        format.js {render :action => 'correct'}
-      end
-    else
-      respond_to do |format|
-        format.js {render :action => 'wrong'}
-      end
+
+    respond_to do |format|
+      format.js {render :action => 'check'}
     end
   end
   
-  def correct
+  def mark
     @attempt = session[:attempt]
-    passed = @attempt.correct
-
-    if passed
-      q = Question.find(passed)
-      q.correct_answer
+    note = params[:note].to_i
+    
+    id = @attempt.mark note
+    
+    q = Question.find(id)
+    if not @attempt.repetition then
+      q.check note
+      
+      if note < 4 then
+        Repetition.create(:user => current_user, :question => q, :day => Time.now.at_beginning_of_day).save
+      end
     end
+    
+    if @attempt.repetition then
+        if note >= 4 then
+          Repetition.find_all_by_user_id_and_question_id(current_user, q).each do |r|
+            r.destroy
+          end
+        end
+    end
+    
+    redirect_to(:action => "question")
+  end
 
-    redirect_to(:action => "question")
-  end
-
-  def wrong
-    @attempt = session[:attempt]
-    @attempt.wrong
-    
-    Question.find(@attempt.current).wrong_answer
-    
-    redirect_to(:action => "question")
-  end
-  
-  def skip
-    @attempt = session[:attempt]
-    @attempt.skip
-    
-    redirect_to(:action => "question")
-  end
-  
-  def onlyRepetitions
-   session[:attempt].onlyRepetitions
-   redirect_to(:action => "correct")
- end
- 
   def fonetic_keyboard
-    
   end
 
 end

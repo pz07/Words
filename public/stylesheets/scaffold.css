@@ -45,7 +45,7 @@ table.dblist{
 }
 
 table.dblist tr{
-	
+	border: 1px solid yellow;
 }
 
 table.dblist tr th{
@@ -60,12 +60,10 @@ table.dblist tr th a:visited { color: white; }
 table.dblist tr th a:hover { color: white; background-color: #0070CA}
 
 table.dblist tr td{
-	background-color: white;
 	border: 1px solid gray;
 }
 
 table.dblist tr td.right{
-	background-color: white;
 	border: 1px solid gray;
 	text-align: right;
 }
@@ -140,4 +138,9 @@ div.title_small{
 div#kb input{
 	padding: 0px;
 	margin: 0px;
+}
+
+table.dblist tr.inactive{
+	border: 1px solid yellow;
+	background-color: #AAAAAA;
 }

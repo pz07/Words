@@ -4,8 +4,20 @@ class LessonsController < ApplicationController
   # GET /lesson
   # GET /lesson.xml
   def index
-    @lessons = Lesson.find_all_by_user_id(current_user)
-
+    show_inactive = false
+    if params[:show_inactive_lessons]
+      show_inactive = object_to_boolean(params[:show_inactive_lessons])
+      session[:show_inactive_lessons] = show_inactive
+    end
+    
+    show_inactive = session[:show_inactive_lessons] if session[:show_inactive_lessons]
+    
+    if show_inactive
+      @lessons = Lesson.find_all_by_user_id(current_user, :order => "created_at asc")
+    else
+      @lessons = Lesson.find(:all, :conditions => ["user_id = ? and active = ?", current_user, true], :order => "created_at asc")
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @lessons }
@@ -34,7 +46,7 @@ class LessonsController < ApplicationController
     @questions = Question.paginate :page => params[:page], :per_page => 10, 
                       :conditions => conditions, 
                       :order => "#{sort_column} #{sort_order} #{out_sort}",
-                      :joins => "left join level l on \"question\".level_id = l.id left join answer a on \"question\".id = a.question_id and a.priority = 1"
+                      :joins => "left join answer a on \"question\".id = a.question_id and a.priority = 1"
     
     respond_to do |format|
       format.html # show.html.erb

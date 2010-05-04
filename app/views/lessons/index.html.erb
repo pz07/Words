@@ -3,13 +3,18 @@
 
 <div class="links">
 	<%= link_to 'New lesson', new_lesson_path %>
+	&nbsp;|&nbsp;
+	<% if session[:show_inactive_lessons] == true%>
+		<%= link_to 'Hide inactive', :show_inactive_lessons => "false" %>
+	<%else%>
+		<%= link_to 'Show all', :show_inactive_lessons => "true" %>
+	<%end%>
 </div>
 <br>
 
 <table class="dblist">
   <tr>
     <th>Name</th>
-    <th>Description</th>
     <th>Questions</th>
     <th>To learn</th>
 	<th></th>
@@ -20,9 +25,8 @@
   </tr>
 <%end%>
 <% @lessons.each do |lesson| %>
-  <tr>
-    <td><%=h lesson.name %></td>
-    <td><%=h truncate lesson.description, :length => 80 %></td>
+  <tr <% if not lesson.active then %>class="inactive"<%end%>>
+    <td ><%=h lesson.name %></td>
     <td class="right"><%=h lesson.questions.size %></td>
     <td class="right"><%=h lesson.questions_to_learn.size %></td>
     <td><%= link_to 'Show', lesson %></td>

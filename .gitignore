@@ -2,4 +2,5 @@
 .loadpath
 .project
 *.tmp*
+config/database.yml 
 

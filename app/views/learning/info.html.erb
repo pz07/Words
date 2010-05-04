@@ -1,0 +1,14 @@
+<style>
+	h2 {
+        width: 100%;
+        background-color: #b43530;
+        color: #FFFFFF;
+        padding: 20px;
+    }
+</style>
+
+<h2>Welcome to Words Application</h2>
+
+You have <%= link_to @to_learn, :action => "learn" %> words to learn in <%= @in_lessons %> <%= link_to 'lessons', :controller => 'lessons'%>.
+<br/>
+There's <%= link_to @to_repeat, :action => "learn", :repetition => true %> words to repeat today.
